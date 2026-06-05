@@ -48,27 +48,26 @@
 
 /* ── DARK THEME (default) ────────────────────────────────────── */
 [data-theme="dark"] {
-  --bg: #07090e;            /* Deep slate-navy black (from corners of image) */
-  --bg-2: #0d111a;          /* Main dark background card surface */
-  --bg-3: #121824;          /* Lighter backdrop layer */
-  --surface: #0f1422;       /* Terminal window base color in image */
-  --surface-2: #1b2336;     /* Highlighted interactive component base */
-  --border: rgba(255, 255, 255, 0.05);
-  --border-strong: rgba(59, 130, 246, 0.15); /* Soft blue-tinted borders */
+  --bg: #0b0f14;
+  --bg-2: #0f1318;
+  --bg-3: #151a22;
+  --surface: #1a1f2e;
+  --surface-2: #222840;
+  --border: rgba(255,255,255,0.07);
+  --border-strong: rgba(255,255,255,0.14);
 
-  --text: #ffffff;          /* Pure crisp white for headings */
-  --text-2: #94a3b8;        /* Muted slate text (from "Software Developer") */
-  --text-3: #475569;        /* Deeply muted terminal comments / inactive text */
+  --text: #e8eaf0;
+  --text-2: #9aa0b0;
+  --text-3: #5c6475;
 
-  /* Exact Accents from the Gradient Graphic */
-  --accent: #3a86ff;        /* Punchy electric cyan-blue (from the top of "Sunday") */
-  --accent-2: #7209b7;      /* Vivid royal violet-purple (from the tail of "Sunday") */
-  --accent-rgb: 58, 134, 255;
-  --accent-dim: rgba(58, 134, 255, 0.12);
+  --accent: #7c6af7;        /* Purple accent */
+  --accent-2: #4f8ef7;      /* Blue secondary */
+  --accent-rgb: 124, 106, 247;
+  --accent-dim: rgba(124,106,247,0.12);
 
-  --shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-  --shadow-card: 0 4px 24px rgba(7, 9, 14, 0.5);
-  --glow: 0 0 50px rgba(114, 9, 183, 0.25); /* Rich purple background ambiance */
+  --shadow: 0 4px 32px rgba(0,0,0,0.5);
+  --shadow-card: 0 2px 20px rgba(0,0,0,0.4);
+  --glow: 0 0 40px rgba(124,106,247,0.18);
 }
 
 /* ── LIGHT THEME ──────────────────────────────────────────────── */
@@ -85,11 +84,10 @@
   --text-2: #334155;        
   --text-3: #64748b;        
 
-  /* Calibrated for high-contrast accessibility on a light background */
-  --accent: #2563eb;        /* Deepened electric blue to prevent text washing out */
-  --accent-2: #6d28d9;      /* Strong amethyst purple secondary */
-  --accent-rgb: 37, 99, 235;
-  --accent-dim: rgba(37, 99, 235, 0.08);
+  --accent: #5b4fcf;
+  --accent-2: #2563eb;
+  --accent-rgb: 91, 79, 207;
+  --accent-dim: rgba(91,79,207,0.10);
 
   --shadow: 0 10px 32px rgba(15, 20, 34, 0.06);
   --shadow-card: 0 4px 16px rgba(15, 20, 34, 0.04);
@@ -583,7 +581,7 @@ button {
 
 .btn-primary {
   background: var(--accent);
-  color: #0b0d11;
+  color: #ffffff;
 }
 
 [data-theme="light"] .btn-primary { color: #fff; background: var(--accent); }
