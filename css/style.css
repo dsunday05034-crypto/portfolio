@@ -428,18 +428,26 @@ button {
 }
 
 .hero-name {
-  font-family: var(--font-display);
+  font-family: "Cabinet Grotesk", "Plus Jakarta Sans", sans-serif;
   font-size: clamp(3.5rem, 10vw, 8rem);
   font-weight: 800;
-  line-height: 1.0;
-  letter-spacing: -0.03em;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
   color: var(--text);
 }
 
+/* Captures the <em> tag and completely transforms it */
 .hero-name em {
-  font-style: normal;
-  color: var(--accent);
-  display: block;
+  font-family: "Playfair Display", "Georgia", serif; /* High-contrast elegant serif */
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0em; /* Gives the letters breathing room */
+  
+  /* Applies your exact blue-to-purple gradient specifically to "Sunday" */
+  background: linear-gradient(135deg, var(--accent) 20%, var(--accent-2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Typing effect */
@@ -1404,60 +1412,49 @@ button {
 }
 
 
-/* ==========================================
-   HIGH-VISIBILITY LIGHT MODE HERO MESH 
-   ========================================== */
+/* ── LIGHT MODE: Ultra-Soft Calm Ambiance (FIX) ──────────────── */
 [data-theme="light"] .hero {
   position: relative;
-  background-color: #f8fafc; 
+  background-color: #fafbfc; /* Cleaner, calmer slate backdrop */
 }
 
+/* ── LIGHT MODE: Sharp Angled Split Canvas ──────────────────── */
+[data-theme="light"] .hero {
+  position: relative;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* Creates a sharp, highly visible angled color block on the right half of the screen */
 [data-theme="light"] .hero::after {
   content: '';
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: -10%;
+  width: 55%;
+  height: 100%;
+  
+  /* The exact blue-to-purple brand gradient from your preview card */
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.12) 0%, rgba(109, 40, 217, 0.15) 100%);
+  
+  /* Cuts the background at a sharp, premium tech angle */
+  transform: skewX(-12deg);
+  transform-origin: top right;
+  
   pointer-events: none;
   z-index: 0;
-  opacity: 1;
-
-  background-size: 30px 30px;
-  background-image: 
-    linear-gradient(to right, rgba(15, 23, 42, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.02) 1px, transparent 1px),
-    linear-gradient(135deg, rgba(37, 99, 235, 0.07) 0%, transparent 45%),
-    linear-gradient(225deg, rgba(109, 40, 217, 0.08) 0%, transparent 55%);
+  border-left: 1px solid rgba(37, 99, 235, 0.15);
 }
 
+/* Optional: Add a single decorative floating circular ring on the gradient side */
 [data-theme="light"] .hero::before {
   content: '';
   position: absolute;
-  width: 350px;
-  height: 350px;
-  top: 15%;
-  left: 10%;
+  top: 20%;
+  right: 10%;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
-  filter: blur(70px); 
   pointer-events: none;
-  z-index: 0;
-  background: radial-gradient(circle, rgba(109, 40, 217, 0.14) 0%, rgba(37, 99, 235, 0.05) 50%, transparent 100%);
-  animation: aurora-fluid-drift 20s ease-in-out infinite;
-}
-
-/* ==========================================
-   GLASS SHIELD FOR TEXT READABILITY 
-   ========================================== */
-[data-theme="light"] .hero-content-wrapper {
-  position: relative;
-  z-index: 10;
-  padding: 40px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.75); 
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(15, 23, 42, 0.06);
-  box-shadow: var(--shadow-card);
-}
-
-[data-theme="light"] .hero h1 {
-  color: #0f172a; 
+  z-index: 1;
 }
