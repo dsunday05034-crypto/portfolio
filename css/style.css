@@ -1336,3 +1336,128 @@ button {
 
   .back-to-top { bottom: var(--space-6); right: var(--space-6); }
 }
+
+/* ── KEYFRAME ENGINE: Smooth Fluid Drift ─────────────────────── */
+@keyframes aurora-fluid-drift {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.15);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes aurora-fluid-drift-reverse {
+  0% {
+    transform: translate(0px, 0px) scale(1.1);
+  }
+  50% {
+    transform: translate(-40px, 40px) scale(0.85);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1.1);
+  }
+}
+
+/* Base structural setup for the Hero area */
+.hero {
+  position: relative;
+  overflow: hidden; /* Ensures the large glowing fluid blobs don't spill out */
+}
+
+/* ── DARK MODE: High-End Tech Start-Up Glow ─────────────────── */
+[data-theme="dark"] .hero::after,
+[data-theme="dark"] .hero::before {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px); /* Creates the flawless, premium glassmorphism blend */
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.45; /* Highly visible but perfectly blended */
+}
+
+/* Blob 1: The Cyan-Blue Engine */
+[data-theme="dark"] .hero::after {
+  width: 450px;
+  height: 450px;
+  top: -10%;
+  left: 15%;
+  background: radial-gradient(circle, #3a86ff 0%, rgba(58, 134, 255, 0) 70%);
+  animation: aurora-fluid-drift 15s ease-in-out infinite;
+}
+
+/* Blob 2: The Vivid Royal Purple Tail */
+[data-theme="dark"] .hero::before {
+  width: 550px;
+  height: 550px;
+  bottom: -20%;
+  right: 5%;
+  background: radial-gradient(circle, #7209b7 0%, rgba(114, 9, 183, 0) 70%);
+  animation: aurora-fluid-drift-reverse 18s ease-in-out infinite alternate;
+}
+
+
+/* ==========================================
+   HIGH-VISIBILITY LIGHT MODE HERO MESH 
+   ========================================== */
+[data-theme="light"] .hero {
+  position: relative;
+  background-color: #f8fafc; 
+}
+
+[data-theme="light"] .hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 1;
+
+  background-size: 30px 30px;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+    linear-gradient(135deg, rgba(37, 99, 235, 0.07) 0%, transparent 45%),
+    linear-gradient(225deg, rgba(109, 40, 217, 0.08) 0%, transparent 55%);
+}
+
+[data-theme="light"] .hero::before {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  top: 15%;
+  left: 10%;
+  border-radius: 50%;
+  filter: blur(70px); 
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(circle, rgba(109, 40, 217, 0.14) 0%, rgba(37, 99, 235, 0.05) 50%, transparent 100%);
+  animation: aurora-fluid-drift 20s ease-in-out infinite;
+}
+
+/* ==========================================
+   GLASS SHIELD FOR TEXT READABILITY 
+   ========================================== */
+[data-theme="light"] .hero-content-wrapper {
+  position: relative;
+  z-index: 10;
+  padding: 40px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.75); 
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: var(--shadow-card);
+}
+
+[data-theme="light"] .hero h1 {
+  color: #0f172a; 
+}
