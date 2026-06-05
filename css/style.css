@@ -48,50 +48,52 @@
 
 /* ── DARK THEME (default) ────────────────────────────────────── */
 [data-theme="dark"] {
-  --bg: #0b0d11;
-  --bg-2: #111418;
-  --bg-3: #181c23;
-  --surface: #1a1f28;
-  --surface-2: #232a35;
-  --border: rgba(255,255,255,0.07);
-  --border-strong: rgba(255,255,255,0.14);
+  --bg: #07090e;            /* Deep slate-navy black (from corners of image) */
+  --bg-2: #0d111a;          /* Main dark background card surface */
+  --bg-3: #121824;          /* Lighter backdrop layer */
+  --surface: #0f1422;       /* Terminal window base color in image */
+  --surface-2: #1b2336;     /* Highlighted interactive component base */
+  --border: rgba(255, 255, 255, 0.05);
+  --border-strong: rgba(59, 130, 246, 0.15); /* Soft blue-tinted borders */
 
-  --text: #e8eaf0;
-  --text-2: #9aa0b0;
-  --text-3: #5c6475;
+  --text: #ffffff;          /* Pure crisp white for headings */
+  --text-2: #94a3b8;        /* Muted slate text (from "Software Developer") */
+  --text-3: #475569;        /* Deeply muted terminal comments / inactive text */
 
-  --accent: #3b82f6;        /* Modern Electric Blue */
-  --accent-2: #8b5cf6;      /* Deep Violet/Purple secondary */
-  --accent-rgb: 59, 130, 246;
-  --accent-dim: rgba(59, 130, 246, 0.12);
+  /* Exact Accents from the Gradient Graphic */
+  --accent: #3a86ff;        /* Punchy electric cyan-blue (from the top of "Sunday") */
+  --accent-2: #7209b7;      /* Vivid royal violet-purple (from the tail of "Sunday") */
+  --accent-rgb: 58, 134, 255;
+  --accent-dim: rgba(58, 134, 255, 0.12);
 
-  --shadow: 0 4px 32px rgba(0,0,0,0.5);
-  --shadow-card: 0 2px 20px rgba(0,0,0,0.4);
-  --glow: 0 0 40px rgba(139, 92, 246, 0.15); /* Vibrant purple glow atmosphere */
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  --shadow-card: 0 4px 24px rgba(7, 9, 14, 0.5);
+  --glow: 0 0 50px rgba(114, 9, 183, 0.25); /* Rich purple background ambiance */
 }
 
 /* ── LIGHT THEME ──────────────────────────────────────────────── */
 [data-theme="light"] {
-  --bg: #f5f6f8;
-  --bg-2: #eef0f4;
-  --bg-3: #ffffff;
-  --surface: #ffffff;
-  --surface-2: #f0f2f6;
-  --border: rgba(0,0,0,0.08);
-  --border-strong: rgba(0,0,0,0.15);
+  --bg: #f8fafc;            /* Crisp cool slate backdrop */
+  --bg-2: #f1f5f9;          /* Secondary light canvas row background */
+  --bg-3: #ffffff;          /* Pure white block surface */
+  --surface: #ffffff;       
+  --surface-2: #e2e8f0;     
+  --border: rgba(15, 20, 34, 0.08);
+  --border-strong: rgba(58, 134, 255, 0.2);
 
-  --text: #111418;
-  --text-2: #4a5264;
-  --text-3: #8a94a6;
+  --text: #07090e;          /* Utilizing your dark theme's background as light text */
+  --text-2: #334155;        
+  --text-3: #64748b;        
 
-  --accent: #1d4ed8;        /* Rich Royal Blue (Accessible Contrast) */
-  --accent-2: #6d28d9;      /* Amethyst Purple secondary */
-  --accent-rgb: 29, 78, 216;
-  --accent-dim: rgba(29, 78, 216, 0.08);
+  /* Calibrated for high-contrast accessibility on a light background */
+  --accent: #2563eb;        /* Deepened electric blue to prevent text washing out */
+  --accent-2: #6d28d9;      /* Strong amethyst purple secondary */
+  --accent-rgb: 37, 99, 235;
+  --accent-dim: rgba(37, 99, 235, 0.08);
 
-  --shadow: 0 4px 32px rgba(0,0,0,0.08);
-  --shadow-card: 0 2px 16px rgba(0,0,0,0.07);
-  --glow: 0 0 40px rgba(109, 40, 249, 0.08); /* Soft ambient purple glow */
+  --shadow: 0 10px 32px rgba(15, 20, 34, 0.06);
+  --shadow-card: 0 4px 16px rgba(15, 20, 34, 0.04);
+  --glow: 0 0 40px rgba(109, 40, 217, 0.06);
 }
 
 /* ── 2. RESET ────────────────────────────────────────────────── */
