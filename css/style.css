@@ -1294,6 +1294,15 @@ a, button, [role="button"] {
   font-style: italic;
 }
 
+.footer-contact-heading {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--space-2);
+}
+
 .footer-socials {
   display: flex;
   gap: var(--space-4);
