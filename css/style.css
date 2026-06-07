@@ -42,7 +42,6 @@
   /* Z-index layers */
   --z-loader: 1000;
   --z-nav: 900;
-  --z-cursor: 800;
   --z-back-top: 700;
 }
 
@@ -217,39 +216,11 @@ button {
   to { width: 100%; }
 }
 
-/* ── 5. CUSTOM CURSOR ────────────────────────────────────────── */
-.cursor,
-.cursor-follower {
-  position: fixed;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: var(--z-cursor);
-  transition: opacity var(--t-fast);
-}
+/* Default cursor */
+body { cursor: default; }
 
-.cursor {
-  width: 8px; height: 8px;
-  background: var(--accent);
-  transform: translate(-50%, -50%);
-}
-
-.cursor-follower {
-  width: 32px; height: 32px;
-  border: 1.5px solid rgba(var(--accent-rgb), 0.5);
-  transform: translate(-50%, -50%);
-  transition: transform 0.12s var(--ease), width var(--t-base) var(--ease), height var(--t-base) var(--ease);
-}
-
-/* Cursor on touch devices — hide */
-@media (hover: none) {
-  .cursor, .cursor-follower { display: none; }
-  body { cursor: auto; }
-}
-
-@media (hover: hover) {
-  body { cursor: none; }
-  a, button { cursor: none; }
-}
+/* Pointer on clickable elements */
+a, button, [role="button"] { cursor: pointer; }
 
 /* ── 6. NAVIGATION ───────────────────────────────────────────── */
 .nav-header {
@@ -687,7 +658,7 @@ button {
 /* About text */
 .about-lead {
   font-family: var(--font-display);
-  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem); /* Scaled slightly to keep it prominent as a lead */
   font-weight: 600;
   color: var(--text);
   line-height: 1.5;
@@ -696,11 +667,15 @@ button {
 
 .about-text p {
   color: var(--text-2);
-  margin-bottom: var(--space-4);
-  font-size: 1rem;
+  margin-bottom: var(--space-5);           /* Increased from space-4 for breathing room */
+  font-size: 1.08rem;                       /* Increased from 1rem so it's easily readable */
+  line-height: 1.65;                        /* Increased from 1.5 to prevent line cramping */
 }
 
-.about-text strong { color: var(--text); font-weight: 500; }
+.about-text strong { 
+  color: var(--text); 
+  font-weight: 600;                         /* Increased from 500 to make bolded keywords pop */
+}
 
 .about-badges {
   display: flex;
@@ -717,7 +692,7 @@ button {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-pill);
-  font-size: 0.82rem;
+  font-size: 0.85rem;                       /* Increased slightly from 0.82rem to match paragraph scaling */
   color: var(--text-2);
   white-space: nowrap;
 }
@@ -819,6 +794,19 @@ button {
   background: var(--accent-dim);
 }
 
+/* ── COMPONENT CONTRAST PATCH FOR SKILL BADGES ────────────────── */
+.skill-group .badge {
+  background: var(--bg-3);
+  color: var(--text-2);
+  transition: border-color var(--t-base), color var(--t-base), background var(--t-base), transform var(--t-base);
+}
+
+.skill-group .badge:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+  transform: translateY(-1px);
+}
 /* ── 11. PROJECTS ────────────────────────────────────────────── */
 .projects { background: var(--bg-2); }
 

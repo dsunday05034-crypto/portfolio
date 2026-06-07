@@ -1,47 +1,43 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
-  <!-- ═══════════════════════════════════════════════
-       META & SEO
-  ═══════════════════════════════════════════════ -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Daniel Sunday — Software Developer and Economics Graduate specializing in Go (Golang). I build reliable backend systems and full-stack web applications." />
+  <meta name="description"
+    content="Software developer and Economics graduate building backend applications with Go and modern web solutions with JavaScript, HTML, and CSS." />
   <meta name="author" content="Daniel Sunday" />
   <meta property="og:image" content="https://danielsunday.name.ng/preview.png" />
   <meta name="twitter:image" content="https://danielsunday.name.ng/preview.png" />
   <meta property="og:title" content="Daniel Sunday | Software Developer" />
-  <meta property="og:description" content="Software Developer and Economics Graduate specializing in Go (Golang). Building reliable backend systems and full-stack web applications." />
+  <meta property="og:description"
+    content="Economics graduate turned software developer building backend systems and web applications with Go and JavaScript." />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <title>Daniel Sunday | Software Developer</title>
 
-  <!-- ═══════════════════════════════════════════════
-       FONTS — Syne (display) + DM Mono (code accents) + DM Sans (body)
-  ═══════════════════════════════════════════════ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
-  <!-- ── LOADER ──────────────────────────────────── -->
+  <!-- LOADER -->
   <div id="loader" aria-hidden="true">
     <div class="loader-inner">
       <span class="loader-initials">DS</span>
-      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <div class="loader-bar">
+        <div class="loader-fill"></div>
+      </div>
     </div>
   </div>
 
-  <!-- ── CURSOR (desktop) ────────────────────────── -->
-  <div class="cursor" id="cursor" aria-hidden="true"></div>
-  <div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
-
-  <!-- ═══════════════════════════════════════════════
-       NAVIGATION
-  ═══════════════════════════════════════════════ -->
+  <!-- NAVIGATION -->
   <header class="nav-header" id="navHeader">
     <nav class="nav container" aria-label="Primary navigation">
       <a href="#hero" class="nav-logo" aria-label="Daniel Sunday home">
@@ -49,18 +45,32 @@
       </a>
 
       <ul class="nav-links" id="navLinks" role="list">
-        <li><a href="#about"   class="nav-link">About</a></li>
-        <li><a href="#skills"  class="nav-link">Skills</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#resume"  class="nav-link">Resume</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#resume" class="nav-link">Resume</a></li>
+        <li><a href="#mainFooter" class="nav-link">Contact</a></li>
       </ul>
 
       <div class="nav-actions">
         <!-- Dark / Light toggle -->
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle colour theme" title="Toggle theme">
-          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
         </button>
 
         <!-- Mobile hamburger -->
@@ -73,12 +83,10 @@
 
   <main>
 
-    <!-- ═══════════════════════════════════════════════
-         HERO
-    ═══════════════════════════════════════════════ -->
+    <!--HERO -->
     <section id="hero" class="hero" aria-label="Introduction">
       <div class="container hero-inner">
-        
+
         <div class="hero-content hero-content-wrapper reveal">
 
           <h1 class="hero-name">
@@ -92,26 +100,27 @@
           </div>
 
           <p class="hero-tagline">
-            I specialize in building performant backend systems and modular architecture, 
-            crafting seamless end-to-end web applications from database to user interface.
+            I build backend applications with Go and create web experiences with JavaScript, HTML, and CSS. Focused on
+            writing clean code, solving problems, and delivering practical software solutions.
           </p>
 
           <div class="hero-cta">
             <a href="#projects" class="btn btn-primary">
               <span>View Projects</span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
               </svg>
             </a>
-            <a href="#contact" class="btn btn-ghost">Contact Me</a>
+            <a href="#mainFooter" class="btn btn-ghost">Contact Me</a>
           </div>
         </div>
 
         <div class="hero-stats reveal" aria-label="Quick stats">
           <div class="stat">
-            <span class="stat-num">3+</span>
-            <span class="stat-label">Projects Built</span>
+            <span class="stat-num">7+</span>
+            <span class="stat-label">Core Projects</span>
           </div>
           <div class="stat-divider" aria-hidden="true"></div>
           <div class="stat">
@@ -132,9 +141,7 @@
       </a>
     </section>
 
-    <!-- ═══════════════════════════════════════════════
-         ABOUT
-    ═══════════════════════════════════════════════ -->
+    <!-- ABOUT -->
     <section id="about" class="section about" aria-labelledby="about-heading">
       <div class="container">
         <div class="section-header reveal">
@@ -154,16 +161,28 @@
 
           <div class="about-text reveal">
             <p class="about-lead">
-              Economics graduate turned software developer — I bridge analytical thinking with engineering discipline.
+              Economics graduate turned backend engineer with a passion for designing high-performance systems and
+              solving complex structural problems.
             </p>
             <p>
-              My background in Economics gave me a strong foundation in logical reasoning, data interpretation, and understanding systems at scale. When I discovered software development, I immediately recognised the parallels: both fields are about modelling the real world, identifying inefficiencies, and building solutions that hold up under pressure.
+              I've always been fascinated by how complex systems work. Studying Economics gave me a deep appreciation
+              for <strong>managing scarce resources</strong> and solving structural puzzles—but I wanted to actually
+              build the solutions. Turning to software engineering felt completely natural; it allowed me to take that
+              analytical mindset and apply it directly to writing clean, efficient code.
             </p>
+
             <p>
-              I am currently deepening my expertise in <strong>backend engineering</strong>, with a focus on <strong>Go (Golang)</strong> — a language I chose for its simplicity, performance, and suitability for building production-grade systems. I spend my time working on real projects, reading engineering literature, and contributing to open-source repositories.
+              Right now, my technical world centers around <strong>Go (Golang)</strong>. I love it because it forces you
+              to write simple, reliable backend systems that perform exceptionally well under pressure. Alongside Go, I
+              write clean JavaScript, HTML, and CSS to make sure whatever I build looks and feels great from the user's
+              perspective, too.
             </p>
+
             <p>
-              My goal is to join a team where I can grow as an engineer, contribute meaningfully from day one, and keep learning alongside talented people building things that matter.
+              Most of my growth comes from getting my hands dirty—diving into technical documentation, <strong>breaking
+                things until I understand why they fail</strong>, and building real-world projects. I’m looking to step
+              into a professional software engineering role where I can drop into a sharp team, pull my weight on
+              meaningful backend infrastructure, and keep raising my engineering standards.
             </p>
 
             <div class="about-badges" aria-label="Quick facts">
@@ -172,13 +191,12 @@
               <span class="badge">💻 Backend Developer</span>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════
-         SKILLS
-    ═══════════════════════════════════════════════ -->
+    <!-- SKILLS -->
     <section id="skills" class="section skills" aria-labelledby="skills-heading">
       <div class="container">
         <div class="section-header reveal">
@@ -190,7 +208,7 @@
           <!-- Languages -->
           <div class="skill-group reveal">
             <h3 class="skill-group-title">
-              <span class="skill-group-icon" aria-hidden="true">&lt;/&gt;</span>
+              <span class="skill-group-icon" aria-hidden="true"></></span>
               Languages
             </h3>
             <div class="skill-cards">
@@ -219,11 +237,11 @@
               <span class="skill-group-icon" aria-hidden="true">⚙</span>
               Tools
             </h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Git</span>
-              <span class="skill-tag">GitHub</span>
-              <span class="skill-tag">Linux</span>
-              <span class="skill-tag">VS Code</span>
+            <div class="about-badges" aria-label="Tools and environment">
+              <span class="badge">🌿 Git</span>
+              <span class="badge">🐙 GitHub</span>
+              <span class="badge">🐧 Linux</span>
+              <span class="badge">⚡ VS Code</span>
             </div>
           </div>
 
@@ -233,62 +251,144 @@
               <span class="skill-group-icon" aria-hidden="true">◈</span>
               Concepts
             </h3>
-            <div class="skill-tags">
-              <span class="skill-tag">REST APIs</span>
-              <span class="skill-tag">Backend Development</span>
-              <span class="skill-tag">Problem Solving</span>
-              <span class="skill-tag">Data Structures &amp; Algorithms</span>
+            <div class="about-badges" aria-label="Core engineering concepts">
+              <span class="badge">REST APIs</span>
+              <span class="badge">Backend Development</span>
+              <span class="badge">Problem Solving</span>
+              <span class="badge">Data Structures &amp; Algorithms</span>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════
-         PROJECTS
-    ═══════════════════════════════════════════════ -->
+    <!-- PROJECTS -->
     <section id="projects" class="section projects" aria-labelledby="projects-heading">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-tag">02 / projects</span>
-          <h2 id="projects-heading" class="section-title">Built Things</h2>
+          <span class="section-tag">03 / projects</span>
+          <h2 id="projects-heading" class="section-title">Selected Work</h2>
         </div>
 
         <div class="projects-grid">
 
-          <!-- Project 1: ASCII Art Web -->
+          <!-- Project 1: Go Text Processor -->
           <article class="project-card reveal" aria-labelledby="proj1-title">
             <div class="project-number" aria-hidden="true">01</div>
             <div class="project-body">
-              <h3 class="project-title" id="proj1-title">ASCII Art Web</h3>
+              <h3 class="project-title" id="proj1-title">Go Text Processor</h3>
               <p class="project-desc">
-                A web application that converts input text into artistic ASCII representations using custom banner fonts. Built end-to-end with Go, serving a clean frontend via HTTP handlers.
+                A command-line application built in Go that processes and transforms text files. The project handles
+                tasks such as formatting text, converting values, and applying different text transformations while
+                processing files efficiently.
               </p>
               <ul class="project-tech" aria-label="Technologies used">
                 <li>Go</li>
-                <li>HTTP</li>
-                <li>HTML/CSS</li>
+                <li>Regex</li>
+                <li>Streams</li>
+                <li>CLI</li>
               </ul>
             </div>
             <div class="project-links">
-              <a href="#" class="btn-link" aria-label="View ASCII Art Web on GitHub" rel="noopener noreferrer" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              <a href="https://github.com/dsunday05034-crypto/go_text_processor" class="btn-link"
+                aria-label="View Go Text Processor on GitHub" rel="noopener noreferrer" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
                 GitHub
-              </a>
-              <a href="#" class="btn-link btn-link--accent" aria-label="View live demo of ASCII Art Web" rel="noopener noreferrer" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
               </a>
             </div>
           </article>
 
-          <!-- Project 2: Forex AI Trader -->
+          <!-- Project 2: ASCII Art Suite -->
+          <article class="project-card project-card--featured reveal" aria-labelledby="proj1-title">
+            <div class="project-number" aria-hidden="true">01</div>
+            <div class="project-badge" aria-label="Featured project">Featured</div>
+            <div class="project-body">
+              <h3 class="project-title" id="proj1-title">ASCII Art Suite</h3>
+              <p class="project-desc">
+                A collection of Go projects built around an ASCII art generator. Each version introduced new features
+                such as color support, file handling, text alignment options, and eventually a web interface where users
+                can generate ASCII art directly from a browser.
+              </p>
+              <ul class="project-tech" aria-label="Technologies used">
+                <li>Go</li>
+                <li>HTTP</li>
+                <li>ANSI</li>
+                <li>CLI</li>
+                <li>File I/O</li>
+                <li>Testing</li>
+              </ul>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/dsunday05034-crypto/ascii-art" class="btn-link"
+                aria-label="ASCII Art on GitHub" rel="noopener noreferrer" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+                Core
+              </a>
+              <a href="https://github.com/dsunday05034-crypto/ascii-art_color" class="btn-link"
+                aria-label="ASCII Art Color on GitHub" rel="noopener noreferrer" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+                Color
+              </a>
+              <a href="https://github.com/dsunday05034-crypto/ascii-art_output" class="btn-link"
+                aria-label="ASCII Art Output on GitHub" rel="noopener noreferrer" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+                Output
+              </a>
+              <a href="https://github.com/dsunday05034-crypto/ascii-art_fs" class="btn-link"
+                aria-label="ASCII Art Fs on GitHub" rel="noopener noreferrer" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+                Fs
+              </a>
+              <a href="https://github.com/dsunday05034-crypto/ascii-art_justify" class="btn-link"
+                aria-label="ASCII Art Justify on GitHub" rel="noopener noreferrer" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+                Justify
+              </a>
+              <a href="https://github.com/dsunday05034-crypto/ascii-art_web" class="btn-link btn-link--accent"
+                aria-label="ASCII Art Web on GitHub" rel="noopener noreferrer" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+                Web
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3: Forex AI Trader -->
           <article class="project-card reveal" aria-labelledby="proj3-title">
             <div class="project-number" aria-hidden="true">03</div>
             <div class="project-body">
-              <h3 class="project-title" id="proj3-title">Forex AI Trader</h3>
+              <div
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; gap: 1rem;">
+                <h3 class="project-title" id="proj3-title" style="margin: 0;">Forex AI Trader</h3>
+                <span class="status-badge"
+                  style="font-size: 0.75rem; padding: 0.2rem 0.6rem; background: rgba(255, 165, 0, 0.1); color: #ffa500; border-radius: 50px; font-weight: 500; white-space: nowrap;">In
+                  Active Development</span>
+              </div>
               <p class="project-desc">
-                An AI-assisted trading platform that analyses forex market data to surface insights and signal opportunities. Combines my Economics background with algorithmic thinking.
+                A forex market analysis project that combines economic concepts, market data, and AI-assisted insights.
+                The goal is to study price movements, evaluate trading opportunities, and experiment with automated
+                decision-making tools.
               </p>
               <ul class="project-tech" aria-label="Technologies used">
                 <li>Go</li>
@@ -297,25 +397,13 @@
                 <li>Data Analysis</li>
               </ul>
             </div>
-            <div class="project-links">
-              <a href="#" class="btn-link" aria-label="View Forex AI Trader on GitHub" rel="noopener noreferrer" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                GitHub
-              </a>
-              <a href="#" class="btn-link btn-link--accent" aria-label="View live demo of Forex AI Trader" rel="noopener noreferrer" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Live Demo
-              </a>
-            </div>
           </article>
 
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════
-         RESUME
-    ═══════════════════════════════════════════════ -->
+    <!-- RESUME -->
     <section id="resume" class="section resume" aria-labelledby="resume-heading">
       <div class="container">
         <div class="section-header reveal">
@@ -327,19 +415,26 @@
           <div class="resume-summary reveal">
             <h3 class="resume-subtitle">Career Summary</h3>
             <p>
-              I hold a degree in Economics and have been developing my software engineering skills with intentional, project-driven learning. My approach mirrors engineering discipline: identify the gap, study the right material, build something real.
+              A backend engineer focused on building clean, reliable, and high-performance server-side architectures
+              with Go. Coming from a background in Economics, I naturally look at software engineering through the lens
+              of resource efficiency and logical problem-solving. My focus is on writing straightforward code that
+              handles pressure smoothly, diving deep into technical documentation, and delivering stable systems that
+              simply work.
             </p>
             <p>
-              I am a self-starter who reads documentation thoroughly, debugs systematically, and ships working software. My current focus is backend systems in Go, with a growing interest in distributed systems and API design.
+              I thrive on diving into technical documentation, untangling complex bugs, and mastering how systems
+              operate under the hood. My work centers on building optimized backend systems and high-performance web
+              applications, primarily powered by Go.
             </p>
 
             <div class="timeline">
               <div class="timeline-item">
                 <div class="timeline-dot" aria-hidden="true"></div>
                 <div>
-                  <span class="timeline-period">2023 — Present</span>
+                  <span class="timeline-period">2026</span>
                   <h4 class="timeline-role">Software Developer (Self-Directed)</h4>
-                  <p class="timeline-desc">Building projects in Go and JavaScript; studying backend engineering, algorithms, and system design.</p>
+                  <p class="timeline-desc">Building projects in Go and JavaScript; studying backend engineering,
+                    algorithms, and system design.</p>
                 </div>
               </div>
               <div class="timeline-item">
@@ -347,7 +442,8 @@
                 <div>
                   <span class="timeline-period">2019 — 2023</span>
                   <h4 class="timeline-role">BSc Economics</h4>
-                  <p class="timeline-desc">Graduated with a strong foundation in quantitative reasoning, economic modelling, and data analysis.</p>
+                  <p class="timeline-desc">Graduated with a strong foundation in quantitative reasoning, economic
+                    modelling, and data analysis.</p>
                 </div>
               </div>
             </div>
@@ -356,11 +452,24 @@
           <div class="resume-download reveal">
             <div class="resume-card">
               <div class="resume-card-icon" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                  <polyline points="10 9 9 9 8 9" />
+                </svg>
               </div>
               <p class="resume-card-label">Daniel_Sunday_Resume.pdf</p>
-              <a href="assets/Daniel_Eromosele_Sunday_CV.pdf" class="btn btn-primary resume-btn" aria-label="Download Daniel Sunday's resume" download>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <a href="assets/Daniel_Sunday_Resume.pdf" class="btn btn-primary resume-btn"
+                aria-label="Download Daniel Sunday's resume" download>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
                 Download Resume
               </a>
             </div>
@@ -369,98 +478,10 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════
-         CONTACT
-    ═══════════════════════════════════════════════ -->
-    <section id="contact" class="section contact" aria-labelledby="contact-heading">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-tag">05 / contact</span>
-          <h2 id="contact-heading" class="section-title">Get In Touch</h2>
-        </div>
-
-        <div class="contact-layout">
-          <!-- Info column -->
-          <div class="contact-info reveal">
-            <p class="contact-intro">
-              Whether you have a role to discuss, a project to collaborate on, or just want to connect — my inbox is open.
-            </p>
-
-            <ul class="contact-links" role="list">
-              <li>
-                <a href="mailto:dsunday@gmail.com" class="contact-link" aria-label="Send email to Daniel Sunday">
-                  <span class="contact-link-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                  </span>
-                  <span>
-                    <span class="contact-link-label">Email</span>
-                    <span class="contact-link-value">dsunday05034@gmail.com</span>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/" class="contact-link" aria-label="Visit Daniel Sunday's GitHub profile" rel="noopener noreferrer" target="_blank">
-                  <span class="contact-link-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                  </span>
-                  <span>
-                    <span class="contact-link-label">GitHub</span>
-                    <span class="contact-link-value">https://github.com/dsunday05034-crypto</span>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://linkedin.com/" class="contact-link" aria-label="Visit Daniel Sunday's LinkedIn profile" rel="noopener noreferrer" target="_blank">
-                  <span class="contact-link-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                  </span>
-                  <span>
-                    <span class="contact-link-label">LinkedIn</span>
-                    <span class="contact-link-value">www.linkedin.com/in/daniel-sunday-09a705373</span>
-                  </span>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Form column -->
-          <div class="contact-form-wrap reveal">
-            <form class="contact-form" id="contactForm" novalidate aria-label="Contact form">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="fname">Name</label>
-                  <input type="text" id="fname" name="name" placeholder="Your name" autocomplete="name" required />
-                </div>
-                <div class="form-group">
-                  <label for="femail">Email</label>
-                  <input type="email" id="femail" name="email" placeholder="your@email.com" autocomplete="email" required />
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="fsubject">Subject</label>
-                <input type="text" id="fsubject" name="subject" placeholder="What's this about?" required />
-              </div>
-              <div class="form-group">
-                <label for="fmessage">Message</label>
-                <textarea id="fmessage" name="message" rows="5" placeholder="Your message..." required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary form-submit">
-                <span class="submit-text">Send Message</span>
-                <svg class="submit-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              </button>
-              <div class="form-status" id="formStatus" role="alert" aria-live="polite"></div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
   </main>
 
-  <!-- ═══════════════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════════════ -->
-  <footer class="footer" role="contentinfo">
+  <!-- FOOTER -->
+  <footer id="mainFooter" class="footer" role="contentinfo">
     <div class="container footer-inner">
       <a href="#hero" class="footer-logo" aria-label="Daniel Sunday — back to top">
         <span class="logo-bracket">{</span>DS<span class="logo-bracket">}</span>
@@ -469,14 +490,26 @@
       <p class="footer-tagline">Built with passion and continuous learning.</p>
 
       <div class="footer-socials" aria-label="Social links">
-        <a href="https://github.com/" class="footer-social" aria-label="GitHub" rel="noopener noreferrer" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        <a href="https://github.com/dsunday05034-crypto" class="footer-social" aria-label="GitHub"
+          rel="noopener noreferrer" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+          </svg>
         </a>
-        <a href="https://linkedin.com/" class="footer-social" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        <a href="https://www.linkedin.com/in/daniel-sunday-09a705373" class="footer-social" aria-label="LinkedIn"
+          rel="noopener noreferrer" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
         </a>
-        <a href="mailto:daniel.sunday@example.com" class="footer-social" aria-label="Email">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:dsunday05034@gmail.com" class="footer-social" aria-label="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
         </a>
       </div>
 
@@ -486,11 +519,15 @@
     </div>
   </footer>
 
-  <!-- ── BACK TO TOP ──────────────────────────────── -->
+  <!-- SCROLL BACK TO THE TOP -->
   <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
   </button>
 
   <script src="js/main.js"></script>
 </body>
+
 </html>

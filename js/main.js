@@ -26,57 +26,6 @@ window.addEventListener("load", () => {
 document.body.style.overflow = "hidden";
 
 /* ═══════════════════════════════════════════════
-   2. CUSTOM CURSOR
-═══════════════════════════════════════════════ */
-const cursor = document.getElementById("cursor");
-const cursorFollower = document.getElementById("cursorFollower");
-
-if (window.matchMedia("(hover: hover)").matches) {
-  let mouseX = 0, mouseY = 0;
-  let followerX = 0, followerY = 0;
-
-  document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cursor.style.left = mouseX + "px";
-    cursor.style.top  = mouseY + "px";
-  });
-
-  // Smooth follower with RAF
-  function animateFollower() {
-    followerX += (mouseX - followerX) * 0.12;
-    followerY += (mouseY - followerY) * 0.12;
-    cursorFollower.style.left = followerX + "px";
-    cursorFollower.style.top  = followerY + "px";
-    requestAnimationFrame(animateFollower);
-  }
-  animateFollower();
-
-  // Expand on interactive elements
-  const interactives = document.querySelectorAll("a, button, input, textarea");
-  interactives.forEach((el) => {
-    el.addEventListener("mouseenter", () => {
-      cursorFollower.style.width  = "52px";
-      cursorFollower.style.height = "52px";
-    });
-    el.addEventListener("mouseleave", () => {
-      cursorFollower.style.width  = "32px";
-      cursorFollower.style.height = "32px";
-    });
-  });
-
-  // Hide when leaving window
-  document.addEventListener("mouseleave", () => {
-    cursor.style.opacity = "0";
-    cursorFollower.style.opacity = "0";
-  });
-  document.addEventListener("mouseenter", () => {
-    cursor.style.opacity = "1";
-    cursorFollower.style.opacity = "1";
-  });
-}
-
-/* ═══════════════════════════════════════════════
    3. NAVIGATION
 ═══════════════════════════════════════════════ */
 const navHeader   = document.getElementById("navHeader");
@@ -112,7 +61,8 @@ navLinkEls.forEach((link) => {
 
 // Highlight active section link
 function updateActiveLink() {
-  const sections = document.querySelectorAll("main section[id]");
+  // Added footer[id] so the header highlights "Contact" when reaching the bottom
+  const sections = document.querySelectorAll("main section[id], footer[id]");
   let current = "";
 
   sections.forEach((sec) => {
@@ -237,55 +187,6 @@ const skillObserver = new IntersectionObserver(
 skillCards.forEach((card) => skillObserver.observe(card));
 
 /* ═══════════════════════════════════════════════
-   8. CONTACT FORM
-═══════════════════════════════════════════════ */
-const contactForm = document.getElementById("contactForm");
-const formStatus  = document.getElementById("formStatus");
-
-if (contactForm) {
-  contactForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const name    = contactForm.name.value.trim();
-    const email   = contactForm.email.value.trim();
-    const subject = contactForm.subject.value.trim();
-    const message = contactForm.message.value.trim();
-
-    // Basic validation
-    if (!name || !email || !subject || !message) {
-      showStatus("Please fill in all fields.", "error");
-      return;
-    }
-
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      showStatus("Please enter a valid email address.", "error");
-      return;
-    }
-
-    // Simulate send (replace with actual backend / EmailJS / Formspree)
-    const submitBtn = contactForm.querySelector(".form-submit");
-    submitBtn.disabled = true;
-    submitBtn.querySelector(".submit-text").textContent = "Sending…";
-
-    setTimeout(() => {
-      showStatus("Message sent! I'll get back to you soon.", "success");
-      contactForm.reset();
-      submitBtn.disabled = false;
-      submitBtn.querySelector(".submit-text").textContent = "Send Message";
-    }, 1600);
-  });
-}
-
-function showStatus(msg, type) {
-  formStatus.textContent = msg;
-  formStatus.className   = "form-status " + type;
-  setTimeout(() => {
-    formStatus.textContent = "";
-    formStatus.className   = "form-status";
-  }, 5000);
-}
-
-/* ═══════════════════════════════════════════════
    9. BACK TO TOP
 ═══════════════════════════════════════════════ */
 const backToTop = document.getElementById("backToTop");
@@ -312,7 +213,11 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     const target = document.querySelector(this.getAttribute("href"));
     if (!target) return;
     e.preventDefault();
-    const offset = 80; // nav height
+    
+    // If target is the footer, scroll completely to the bottom (0 offset)
+    const isFooter = this.getAttribute("href") === "#mainFooter";
+    const offset = isFooter ? 0 : 80; // 80px nav header height for sections
+    
     const top    = target.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({ top, behavior: "smooth" });
   });
