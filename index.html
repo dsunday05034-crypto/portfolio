@@ -27,7 +27,6 @@
 
 <body>
 
-  <!-- LOADER -->
   <div id="loader" aria-hidden="true">
     <div class="loader-inner">
       <span class="loader-initials">DS</span>
@@ -37,7 +36,6 @@
     </div>
   </div>
 
-  <!-- NAVIGATION -->
   <header class="nav-header" id="navHeader">
     <nav class="nav container" aria-label="Primary navigation">
       <a href="#hero" class="nav-logo" aria-label="Daniel Sunday home">
@@ -53,7 +51,6 @@
       </ul>
 
       <div class="nav-actions">
-        <!-- Dark / Light toggle -->
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle colour theme" title="Toggle theme">
           <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -73,7 +70,6 @@
           </svg>
         </button>
 
-        <!-- Mobile hamburger -->
         <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
           <span></span><span></span><span></span>
         </button>
@@ -83,27 +79,21 @@
 
   <main>
 
-    <!--HERO -->
     <section id="hero" class="hero" aria-label="Introduction">
       <div class="container hero-inner">
-
         <div class="hero-content hero-content-wrapper reveal">
-
           <h1 class="hero-name">
             Daniel<br /><em>Sunday</em>
           </h1>
-
           <div class="hero-title-wrap" aria-label="Economics Graduate & Software Developer">
             <span class="hero-title-static">// </span>
             <span class="hero-typed" id="heroTyped" aria-live="polite"></span>
             <span class="hero-cursor" aria-hidden="true">|</span>
           </div>
-
           <p class="hero-tagline">
             I build backend applications with Go and create web experiences with JavaScript, HTML, and CSS. Focused on
             writing clean code, solving problems, and delivering practical software solutions.
           </p>
-
           <div class="hero-cta">
             <a href="#projects" class="btn btn-primary">
               <span>View Projects</span>
@@ -116,7 +106,6 @@
             <a href="#mainFooter" class="btn btn-ghost">Contact Me</a>
           </div>
         </div>
-
         <div class="hero-stats reveal" aria-label="Quick stats">
           <div class="stat">
             <span class="stat-num">7+</span>
@@ -134,23 +123,19 @@
           </div>
         </div>
       </div>
-
       <a href="#about" class="scroll-hint" aria-label="Scroll to About section">
         <span class="scroll-hint-label">Scroll</span>
         <span class="scroll-hint-line" aria-hidden="true"></span>
       </a>
     </section>
 
-    <!-- ABOUT -->
     <section id="about" class="section about" aria-labelledby="about-heading">
       <div class="container">
         <div class="section-header reveal">
           <span class="section-tag">01 / about</span>
           <h2 id="about-heading" class="section-title">Who I Am</h2>
         </div>
-
         <div class="about-grid">
-          <!-- Portrait placeholder -->
           <div class="about-portrait reveal" aria-hidden="true">
             <div class="portrait-frame">
               <div class="portrait-initials">DS</div>
@@ -158,7 +143,6 @@
               <div class="portrait-dots"></div>
             </div>
           </div>
-
           <div class="about-text reveal">
             <p class="about-lead">
               Economics graduate turned backend engineer with a passion for designing high-performance systems and
@@ -170,42 +154,35 @@
               build the solutions. Turning to software engineering felt completely natural; it allowed me to take that
               analytical mindset and apply it directly to writing clean, efficient code.
             </p>
-
             <p>
               Right now, my technical world centers around <strong>Go (Golang)</strong>. I love it because it forces you
               to write simple, reliable backend systems that perform exceptionally well under pressure. Alongside Go, I
               write clean JavaScript, HTML, and CSS to make sure whatever I build looks and feels great from the user's
               perspective, too.
             </p>
-
             <p>
               Most of my growth comes from getting my hands dirty—diving into technical documentation, <strong>breaking
-                things until I understand why they fail</strong>, and building real-world projects. I’m looking to step
+                things until I understand why they fail</strong>, and building real-world projects. I'm looking to step
               into a professional software engineering role where I can drop into a sharp team, pull my weight on
               meaningful backend infrastructure, and keep raising my engineering standards.
             </p>
-
             <div class="about-badges" aria-label="Quick facts">
               <span class="badge">📍 Abuja, Nigeria</span>
               <span class="badge">🎓 Economics Graduate</span>
               <span class="badge">💻 Backend Developer</span>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- SKILLS -->
     <section id="skills" class="section skills" aria-labelledby="skills-heading">
       <div class="container">
         <div class="section-header reveal">
           <span class="section-tag">02 / skills</span>
           <h2 id="skills-heading" class="section-title">Toolkit</h2>
         </div>
-
         <div class="skills-grid">
-          <!-- Languages -->
           <div class="skill-group reveal">
             <h3 class="skill-group-title">
               <span class="skill-group-icon" aria-hidden="true"></></span>
@@ -230,8 +207,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Tools -->
           <div class="skill-group reveal">
             <h3 class="skill-group-title">
               <span class="skill-group-icon" aria-hidden="true">⚙</span>
@@ -244,8 +219,6 @@
               <span class="badge">⚡ VS Code</span>
             </div>
           </div>
-
-          <!-- Concepts -->
           <div class="skill-group reveal">
             <h3 class="skill-group-title">
               <span class="skill-group-icon" aria-hidden="true">◈</span>
@@ -258,22 +231,17 @@
               <span class="badge">Data Structures &amp; Algorithms</span>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
     <section id="projects" class="section projects" aria-labelledby="projects-heading">
       <div class="container">
         <div class="section-header reveal">
           <span class="section-tag">03 / projects</span>
           <h2 id="projects-heading" class="section-title">Selected Work</h2>
         </div>
-
         <div class="projects-grid">
-
-          <!-- Project 1: Go Text Processor -->
           <article class="project-card reveal" aria-labelledby="proj1-title">
             <div class="project-number" aria-hidden="true">01</div>
             <div class="project-body">
@@ -302,12 +270,11 @@
             </div>
           </article>
 
-          <!-- Project 2: ASCII Art Suite -->
-          <article class="project-card project-card--featured reveal" aria-labelledby="proj1-title">
-            <div class="project-number" aria-hidden="true">01</div>
+          <article class="project-card project-card--featured reveal" aria-labelledby="proj2-title">
+            <div class="project-number" aria-hidden="true">02</div>
             <div class="project-badge" aria-label="Featured project">Featured</div>
             <div class="project-body">
-              <h3 class="project-title" id="proj1-title">ASCII Art Suite</h3>
+              <h3 class="project-title" id="proj2-title">ASCII Art Suite</h3>
               <p class="project-desc">
                 A collection of Go projects built around an ASCII art generator. Each version introduced new features
                 such as color support, file handling, text alignment options, and eventually a web interface where users
@@ -374,12 +341,10 @@
             </div>
           </article>
 
-          <!-- Project 3: Forex AI Trader -->
           <article class="project-card reveal" aria-labelledby="proj3-title">
             <div class="project-number" aria-hidden="true">03</div>
             <div class="project-body">
-              <div
-                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; gap: 1rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; gap: 1rem;">
                 <h3 class="project-title" id="proj3-title" style="margin: 0;">Forex AI Trader</h3>
                 <span class="status-badge"
                   style="font-size: 0.75rem; padding: 0.2rem 0.6rem; background: rgba(255, 165, 0, 0.1); color: #ffa500; border-radius: 50px; font-weight: 500; white-space: nowrap;">In
@@ -398,19 +363,16 @@
               </ul>
             </div>
           </article>
-
         </div>
       </div>
     </section>
 
-    <!-- RESUME -->
     <section id="resume" class="section resume" aria-labelledby="resume-heading">
       <div class="container">
         <div class="section-header reveal">
           <span class="section-tag">04 / resume</span>
           <h2 id="resume-heading" class="section-title">Experience</h2>
         </div>
-
         <div class="resume-layout">
           <div class="resume-summary reveal">
             <h3 class="resume-subtitle">Career Summary</h3>
@@ -426,7 +388,6 @@
               operate under the hood. My work centers on building optimized backend systems and high-performance web
               applications, primarily powered by Go.
             </p>
-
             <div class="timeline">
               <div class="timeline-item">
                 <div class="timeline-dot" aria-hidden="true"></div>
@@ -448,7 +409,6 @@
               </div>
             </div>
           </div>
-
           <div class="resume-download reveal">
             <div class="resume-card">
               <div class="resume-card-icon" aria-hidden="true">
@@ -480,15 +440,12 @@
 
   </main>
 
-  <!-- FOOTER -->
   <footer id="mainFooter" class="footer" role="contentinfo">
     <div class="container footer-inner">
       <a href="#hero" class="footer-logo" aria-label="Daniel Sunday — back to top">
         <span class="logo-bracket">{</span>DS<span class="logo-bracket">}</span>
       </a>
-
       <p class="footer-tagline">Built with passion and continuous learning.</p>
-
       <div class="footer-socials" aria-label="Social links">
         <a href="https://github.com/dsunday05034-crypto" class="footer-social" aria-label="GitHub"
           rel="noopener noreferrer" target="_blank">
@@ -512,14 +469,12 @@
           </svg>
         </a>
       </div>
-
       <p class="footer-copy">
         &copy; <span id="footerYear"></span> Daniel Sunday. All rights reserved.
       </p>
     </div>
   </footer>
 
-  <!-- SCROLL BACK TO THE TOP -->
   <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
       stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">

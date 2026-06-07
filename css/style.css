@@ -1,11 +1,4 @@
-/* ═══════════════════════════════════════════════════════════════
-   DANIEL SUNDAY — PORTFOLIO CSS
-   Architecture: Custom Properties → Reset → Layout → Components
-   ═══════════════════════════════════════════════════════════════ */
-
-/* ── 1. DESIGN TOKENS ────────────────────────────────────────── */
 :root {
-  /* Spacing scale */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -17,35 +10,29 @@
   --space-24: 6rem;
   --space-32: 8rem;
 
-  /* Layout */
   --container-max: 1140px;
   --container-pad: clamp(1.25rem, 5vw, 3rem);
 
-  /* Typography */
   --font-display: 'Syne', sans-serif;
   --font-body: 'DM Sans', sans-serif;
   --font-mono: 'DM Mono', monospace;
 
-  /* Radii */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 16px;
   --radius-pill: 999px;
 
-  /* Transitions */
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
   --t-fast: 150ms;
   --t-base: 280ms;
   --t-slow: 500ms;
 
-  /* Z-index layers */
   --z-loader: 1000;
   --z-nav: 900;
   --z-back-top: 700;
 }
 
-/* ── DARK THEME (default) ────────────────────────────────────── */
 [data-theme="dark"] {
   --bg: #0b0f14;
   --bg-2: #0f1318;
@@ -59,8 +46,8 @@
   --text-2: #9aa0b0;
   --text-3: #5c6475;
 
-  --accent: #7c6af7;        /* Purple accent */
-  --accent-2: #4f8ef7;      /* Blue secondary */
+  --accent: #7c6af7;
+  --accent-2: #4f8ef7;
   --accent-rgb: 124, 106, 247;
   --accent-dim: rgba(124,106,247,0.12);
 
@@ -69,19 +56,18 @@
   --glow: 0 0 40px rgba(124,106,247,0.18);
 }
 
-/* ── LIGHT THEME ──────────────────────────────────────────────── */
 [data-theme="light"] {
-  --bg: #f8fafc;            /* Crisp cool slate backdrop */
-  --bg-2: #f1f5f9;          /* Secondary light canvas row background */
-  --bg-3: #ffffff;          /* Pure white block surface */
-  --surface: #ffffff;       
-  --surface-2: #e2e8f0;     
+  --bg: #f8fafc;
+  --bg-2: #f1f5f9;
+  --bg-3: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #e2e8f0;
   --border: rgba(15, 20, 34, 0.08);
   --border-strong: rgba(58, 134, 255, 0.2);
 
-  --text: #07090e;          /* Utilizing your dark theme's background as light text */
-  --text-2: #334155;        
-  --text-3: #64748b;        
+  --text: #07090e;
+  --text-2: #334155;
+  --text-3: #64748b;
 
   --accent: #5b4fcf;
   --accent-2: #2563eb;
@@ -93,8 +79,11 @@
   --glow: 0 0 40px rgba(109, 40, 217, 0.06);
 }
 
-/* ── 2. RESET ────────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 html {
   scroll-behavior: smooth;
@@ -109,13 +98,22 @@ body {
   line-height: 1.7;
   transition: background-color var(--t-slow) var(--ease), color var(--t-slow) var(--ease);
   overflow-x: hidden;
+  cursor: default;
 }
 
-img, svg { display: block; max-width: 100%; }
+img, svg {
+  display: block;
+  max-width: 100%;
+}
 
-a { color: inherit; text-decoration: none; }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-ul { list-style: none; }
+ul {
+  list-style: none;
+}
 
 button {
   cursor: pointer;
@@ -125,13 +123,16 @@ button {
   color: inherit;
 }
 
+a, button, [role="button"] {
+  cursor: pointer;
+}
+
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: var(--radius-sm);
 }
 
-/* ── 3. UTILITIES ────────────────────────────────────────────── */
 .container {
   width: 100%;
   max-width: var(--container-max);
@@ -165,7 +166,6 @@ button {
   color: var(--text);
 }
 
-/* ── 4. LOADER ───────────────────────────────────────────────── */
 #loader {
   position: fixed;
   inset: 0;
@@ -177,9 +177,15 @@ button {
   transition: opacity var(--t-slow) var(--ease), visibility var(--t-slow);
 }
 
-#loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
 
-.loader-inner { text-align: center; }
+.loader-inner {
+  text-align: center;
+}
 
 .loader-initials {
   display: block;
@@ -216,16 +222,11 @@ button {
   to { width: 100%; }
 }
 
-/* Default cursor */
-body { cursor: default; }
-
-/* Pointer on clickable elements */
-a, button, [role="button"] { cursor: pointer; }
-
-/* ── 6. NAVIGATION ───────────────────────────────────────────── */
 .nav-header {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: var(--z-nav);
   padding-block: var(--space-4);
   transition: background-color var(--t-base) var(--ease),
@@ -252,7 +253,6 @@ a, button, [role="button"] { cursor: pointer; }
   gap: var(--space-8);
 }
 
-/* Logo */
 .nav-logo {
   font-family: var(--font-display);
   font-size: 1.25rem;
@@ -262,11 +262,14 @@ a, button, [role="button"] { cursor: pointer; }
   flex-shrink: 0;
 }
 
-.nav-logo:hover { color: var(--accent); }
+.nav-logo:hover {
+  color: var(--accent);
+}
 
-.logo-bracket { color: var(--accent); }
+.logo-bracket {
+  color: var(--accent);
+}
 
-/* Nav links */
 .nav-links {
   display: flex;
   align-items: center;
@@ -286,64 +289,86 @@ a, button, [role="button"] { cursor: pointer; }
 .nav-link::after {
   content: '';
   position: absolute;
-  left: 0; bottom: -3px;
-  width: 0; height: 1px;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
   background: var(--accent);
   transition: width var(--t-base) var(--ease);
 }
 
 .nav-link:hover,
-.nav-link.active { color: var(--text); }
+.nav-link.active {
+  color: var(--text);
+}
 
 .nav-link:hover::after,
-.nav-link.active::after { width: 100%; }
+.nav-link.active::after {
+  width: 100%;
+}
 
-/* Nav actions */
-.nav-actions { display: flex; align-items: center; gap: var(--space-3); }
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
 
-/* Theme toggle */
 .theme-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px; height: 36px;
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-md);
   color: var(--text-2);
   transition: color var(--t-base), background var(--t-base);
 }
 
-.theme-toggle:hover { color: var(--accent); background: var(--accent-dim); }
+.theme-toggle:hover {
+  color: var(--accent);
+  background: var(--accent-dim);
+}
 
-.theme-toggle svg { width: 18px; height: 18px; }
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+}
 
 [data-theme="dark"] .icon-sun { display: block; }
 [data-theme="dark"] .icon-moon { display: none; }
 [data-theme="light"] .icon-sun { display: none; }
 [data-theme="light"] .icon-moon { display: block; }
 
-/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 36px; height: 36px;
+  width: 36px;
+  height: 36px;
   padding: var(--space-2);
 }
 
 .hamburger span {
   display: block;
-  width: 100%; height: 1.5px;
+  width: 100%;
+  height: 1.5px;
   background: var(--text-2);
   border-radius: var(--radius-pill);
   transition: transform var(--t-base) var(--ease), opacity var(--t-base), background var(--t-base);
 }
 
-.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.hamburger.open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
 
-/* ── 7. HERO ─────────────────────────────────────────────────── */
 .hero {
   min-height: 100svh;
   display: flex;
@@ -355,11 +380,11 @@ a, button, [role="button"] { cursor: pointer; }
   padding-top: 80px;
 }
 
-/* Accent glow orb */
 .hero::before {
   content: '';
   position: absolute;
-  top: 20%; left: 50%;
+  top: 20%;
+  left: 50%;
   transform: translate(-50%, -50%);
   width: min(600px, 90vw);
   height: min(400px, 60vw);
@@ -387,7 +412,8 @@ a, button, [role="button"] { cursor: pointer; }
 
 .dot {
   display: inline-block;
-  width: 7px; height: 7px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: var(--accent);
   animation: blink 2s ease-in-out infinite;
@@ -407,21 +433,17 @@ a, button, [role="button"] { cursor: pointer; }
   color: var(--text);
 }
 
-/* Captures the <em> tag and completely transforms it */
 .hero-name em {
-  font-family: "Playfair Display", "Georgia", serif; /* High-contrast elegant serif */
+  font-family: "Playfair Display", "Georgia", serif;
   font-style: italic;
   font-weight: 400;
-  letter-spacing: 0em; /* Gives the letters breathing room */
-  
-  /* Applies your exact blue-to-purple gradient specifically to "Sunday" */
+  letter-spacing: 0em;
   background: linear-gradient(135deg, var(--accent) 20%, var(--accent-2) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Typing effect */
 .hero-title-wrap {
   display: flex;
   align-items: center;
@@ -432,7 +454,10 @@ a, button, [role="button"] { cursor: pointer; }
   margin-block: var(--space-4) var(--space-6);
 }
 
-.hero-title-static { color: var(--accent); margin-right: var(--space-2); }
+.hero-title-static {
+  color: var(--accent);
+  margin-right: var(--space-2);
+}
 
 .hero-cursor {
   color: var(--accent);
@@ -449,10 +474,16 @@ a, button, [role="button"] { cursor: pointer; }
   line-height: 1.75;
 }
 
-.br-desktop { display: none; }
-@media (min-width: 768px) { .br-desktop { display: block; } }
+.br-desktop {
+  display: none;
+}
 
-/* CTA buttons */
+@media (min-width: 768px) {
+  .br-desktop {
+    display: block;
+  }
+}
+
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
@@ -460,7 +491,6 @@ a, button, [role="button"] { cursor: pointer; }
   margin-top: var(--space-8);
 }
 
-/* Stats strip */
 .hero-stats {
   display: flex;
   align-items: center;
@@ -472,7 +502,9 @@ a, button, [role="button"] { cursor: pointer; }
   width: fit-content;
 }
 
-.stat { text-align: center; }
+.stat {
+  text-align: center;
+}
 
 .stat-num {
   display: block;
@@ -495,7 +527,6 @@ a, button, [role="button"] { cursor: pointer; }
   background: var(--border);
 }
 
-/* Scroll hint */
 .scroll-hint {
   position: absolute;
   bottom: var(--space-8);
@@ -514,7 +545,9 @@ a, button, [role="button"] { cursor: pointer; }
   z-index: 1;
 }
 
-.scroll-hint:hover { color: var(--accent); }
+.scroll-hint:hover {
+  color: var(--accent);
+}
 
 .scroll-hint-line {
   width: 1px;
@@ -528,7 +561,6 @@ a, button, [role="button"] { cursor: pointer; }
   50% { transform: scaleY(0.5); opacity: 0.4; }
 }
 
-/* ── 8. BUTTONS ──────────────────────────────────────────────── */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -543,15 +575,25 @@ a, button, [role="button"] { cursor: pointer; }
   white-space: nowrap;
 }
 
-.btn svg { width: 16px; height: 16px; transition: transform var(--t-base) var(--ease); }
-.btn:hover svg { transform: translateX(3px); }
+.btn svg {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--t-base) var(--ease);
+}
+
+.btn:hover svg {
+  transform: translateX(3px);
+}
 
 .btn-primary {
   background: var(--accent);
   color: #ffffff;
 }
 
-[data-theme="light"] .btn-primary { color: #fff; background: var(--accent); }
+[data-theme="light"] .btn-primary {
+  color: #fff;
+  background: var(--accent);
+}
 
 .btn-primary:hover {
   background: color-mix(in srgb, var(--accent) 80%, white);
@@ -572,7 +614,6 @@ a, button, [role="button"] { cursor: pointer; }
   transform: translateY(-1px);
 }
 
-/* Project link buttons */
 .btn-link {
   display: inline-flex;
   align-items: center;
@@ -586,7 +627,10 @@ a, button, [role="button"] { cursor: pointer; }
   transition: all var(--t-base);
 }
 
-.btn-link svg { width: 14px; height: 14px; }
+.btn-link svg {
+  width: 14px;
+  height: 14px;
+}
 
 .btn-link:hover {
   color: var(--text);
@@ -600,8 +644,9 @@ a, button, [role="button"] { cursor: pointer; }
   background: var(--accent-dim);
 }
 
-/* ── 9. ABOUT ────────────────────────────────────────────────── */
-.about { background: var(--bg-2); }
+.about {
+  background: var(--bg-2);
+}
 
 .about-grid {
   display: grid;
@@ -610,12 +655,15 @@ a, button, [role="button"] { cursor: pointer; }
   align-items: start;
 }
 
-/* Portrait */
-.about-portrait { display: flex; justify-content: center; }
+.about-portrait {
+  display: flex;
+  justify-content: center;
+}
 
 .portrait-frame {
   position: relative;
-  width: 220px; height: 220px;
+  width: 220px;
+  height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -629,7 +677,8 @@ a, button, [role="button"] { cursor: pointer; }
   background: var(--surface);
   border: 2px solid var(--border-strong);
   border-radius: var(--radius-lg);
-  width: 180px; height: 180px;
+  width: 180px;
+  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -645,20 +694,23 @@ a, button, [role="button"] { cursor: pointer; }
   animation: rotate 20s linear infinite;
 }
 
-@keyframes rotate { to { transform: rotate(360deg); } }
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
 
 .portrait-dots {
   position: absolute;
-  top: -8px; right: -8px;
-  width: 40px; height: 40px;
+  top: -8px;
+  right: -8px;
+  width: 40px;
+  height: 40px;
   background-image: radial-gradient(var(--border-strong) 1px, transparent 1px);
   background-size: 8px 8px;
 }
 
-/* About text */
 .about-lead {
   font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2.5vw, 1.5rem); /* Scaled slightly to keep it prominent as a lead */
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
   font-weight: 600;
   color: var(--text);
   line-height: 1.5;
@@ -667,14 +719,14 @@ a, button, [role="button"] { cursor: pointer; }
 
 .about-text p {
   color: var(--text-2);
-  margin-bottom: var(--space-5);           /* Increased from space-4 for breathing room */
-  font-size: 1.08rem;                       /* Increased from 1rem so it's easily readable */
-  line-height: 1.65;                        /* Increased from 1.5 to prevent line cramping */
+  margin-bottom: var(--space-5);
+  font-size: 1.08rem;
+  line-height: 1.65;
 }
 
-.about-text strong { 
-  color: var(--text); 
-  font-weight: 600;                         /* Increased from 500 to make bolded keywords pop */
+.about-text strong {
+  color: var(--text);
+  font-weight: 600;
 }
 
 .about-badges {
@@ -692,13 +744,14 @@ a, button, [role="button"] { cursor: pointer; }
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-pill);
-  font-size: 0.85rem;                       /* Increased slightly from 0.82rem to match paragraph scaling */
+  font-size: 0.85rem;
   color: var(--text-2);
   white-space: nowrap;
 }
 
-/* ── 10. SKILLS ──────────────────────────────────────────────── */
-.skills { background: var(--bg); }
+.skills {
+  background: var(--bg);
+}
 
 .skills-grid {
   display: grid;
@@ -738,8 +791,11 @@ a, button, [role="button"] { cursor: pointer; }
   font-size: 1rem;
 }
 
-/* Skill bars */
-.skill-cards { display: flex; flex-direction: column; gap: var(--space-4); }
+.skill-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
 
 .skill-card {
   display: flex;
@@ -770,11 +826,15 @@ a, button, [role="button"] { cursor: pointer; }
   transition: width 1s var(--ease) 0.2s;
 }
 
-/* Animate bar when in view */
-.skill-card.in-view .skill-fill { width: var(--w); }
+.skill-card.in-view .skill-fill {
+  width: var(--w);
+}
 
-/* Skill tags */
-.skill-tags { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
 
 .skill-tag {
   display: inline-block;
@@ -794,7 +854,6 @@ a, button, [role="button"] { cursor: pointer; }
   background: var(--accent-dim);
 }
 
-/* ── COMPONENT CONTRAST PATCH FOR SKILL BADGES ────────────────── */
 .skill-group .badge {
   background: var(--bg-3);
   color: var(--text-2);
@@ -807,8 +866,10 @@ a, button, [role="button"] { cursor: pointer; }
   background: var(--accent-dim);
   transform: translateY(-1px);
 }
-/* ── 11. PROJECTS ────────────────────────────────────────────── */
-.projects { background: var(--bg-2); }
+
+.projects {
+  background: var(--bg-2);
+}
 
 .projects-grid {
   display: grid;
@@ -832,7 +893,9 @@ a, button, [role="button"] { cursor: pointer; }
 .project-card::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 2px;
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
   opacity: 0;
@@ -845,14 +908,17 @@ a, button, [role="button"] { cursor: pointer; }
   box-shadow: var(--shadow-card), var(--glow);
 }
 
-.project-card:hover::before { opacity: 1; }
+.project-card:hover::before {
+  opacity: 1;
+}
 
-/* Featured card */
 .project-card--featured {
   border-color: rgba(var(--accent-rgb), 0.2);
 }
 
-.project-card--featured::before { opacity: 0.5; }
+.project-card--featured::before {
+  opacity: 0.5;
+}
 
 .project-number {
   font-family: var(--font-mono);
@@ -876,7 +942,9 @@ a, button, [role="button"] { cursor: pointer; }
   text-transform: uppercase;
 }
 
-.project-body { flex: 1; }
+.project-body {
+  flex: 1;
+}
 
 .project-title {
   font-family: var(--font-display);
@@ -909,10 +977,15 @@ a, button, [role="button"] { cursor: pointer; }
   color: var(--accent);
 }
 
-.project-links { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+.project-links {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
 
-/* ── 12. RESUME ──────────────────────────────────────────────── */
-.resume { background: var(--bg); }
+.resume {
+  background: var(--bg);
+}
 
 .resume-layout {
   display: grid;
@@ -935,7 +1008,6 @@ a, button, [role="button"] { cursor: pointer; }
   font-size: 0.95rem;
 }
 
-/* Timeline */
 .timeline {
   margin-top: var(--space-10);
   padding-left: var(--space-4);
@@ -956,7 +1028,8 @@ a, button, [role="button"] { cursor: pointer; }
   position: absolute;
   left: calc(-1px - 5px);
   top: 6px;
-  width: 10px; height: 10px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: var(--accent);
   border: 2px solid var(--bg);
@@ -985,7 +1058,6 @@ a, button, [role="button"] { cursor: pointer; }
   color: var(--text-2);
 }
 
-/* Resume card */
 .resume-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -1004,14 +1076,19 @@ a, button, [role="button"] { cursor: pointer; }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 64px; height: 64px;
+  width: 64px;
+  height: 64px;
   background: var(--accent-dim);
   border: 1px solid rgba(var(--accent-rgb), 0.2);
   border-radius: var(--radius-lg);
   margin: 0 auto var(--space-4);
 }
 
-.resume-card-icon svg { width: 28px; height: 28px; color: var(--accent); }
+.resume-card-icon svg {
+  width: 28px;
+  height: 28px;
+  color: var(--accent);
+}
 
 .resume-card-label {
   font-family: var(--font-mono);
@@ -1020,10 +1097,14 @@ a, button, [role="button"] { cursor: pointer; }
   margin-bottom: var(--space-6);
 }
 
-.resume-btn { width: 100%; justify-content: center; }
+.resume-btn {
+  width: 100%;
+  justify-content: center;
+}
 
-/* ── 13. CONTACT ─────────────────────────────────────────────── */
-.contact { background: var(--bg-2); }
+.contact {
+  background: var(--bg-2);
+}
 
 .contact-layout {
   display: grid;
@@ -1039,7 +1120,11 @@ a, button, [role="button"] { cursor: pointer; }
   line-height: 1.7;
 }
 
-.contact-links { display: flex; flex-direction: column; gap: var(--space-4); }
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
 
 .contact-link {
   display: flex;
@@ -1062,14 +1147,18 @@ a, button, [role="button"] { cursor: pointer; }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px; height: 40px;
+  width: 40px;
+  height: 40px;
   background: var(--accent-dim);
   border-radius: var(--radius-md);
   flex-shrink: 0;
   color: var(--accent);
 }
 
-.contact-link-icon svg { width: 18px; height: 18px; }
+.contact-link-icon svg {
+  width: 18px;
+  height: 18px;
+}
 
 .contact-link-label {
   display: block;
@@ -1087,7 +1176,6 @@ a, button, [role="button"] { cursor: pointer; }
   color: var(--text);
 }
 
-/* Contact form */
 .contact-form-wrap {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -1095,7 +1183,11 @@ a, button, [role="button"] { cursor: pointer; }
   padding: var(--space-8);
 }
 
-.contact-form { display: flex; flex-direction: column; gap: var(--space-5); }
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
 
 .form-row {
   display: grid;
@@ -1103,7 +1195,11 @@ a, button, [role="button"] { cursor: pointer; }
   gap: var(--space-4);
 }
 
-.form-group { display: flex; flex-direction: column; gap: var(--space-2); }
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
 
 .form-group label {
   font-size: 0.78rem;
@@ -1128,7 +1224,9 @@ a, button, [role="button"] { cursor: pointer; }
 }
 
 .form-group input::placeholder,
-.form-group textarea::placeholder { color: var(--text-3); }
+.form-group textarea::placeholder {
+  color: var(--text-3);
+}
 
 .form-group input:focus,
 .form-group textarea:focus {
@@ -1137,9 +1235,16 @@ a, button, [role="button"] { cursor: pointer; }
   box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.1);
 }
 
-.form-submit { width: 100%; justify-content: center; margin-top: var(--space-2); }
+.form-submit {
+  width: 100%;
+  justify-content: center;
+  margin-top: var(--space-2);
+}
 
-.submit-icon { width: 16px; height: 16px; }
+.submit-icon {
+  width: 16px;
+  height: 16px;
+}
 
 .form-status {
   font-family: var(--font-mono);
@@ -1148,10 +1253,14 @@ a, button, [role="button"] { cursor: pointer; }
   min-height: 1rem;
 }
 
-.form-status.success { color: var(--accent); }
-.form-status.error { color: #ff6b6b; }
+.form-status.success {
+  color: var(--accent);
+}
 
-/* ── 14. FOOTER ──────────────────────────────────────────────── */
+.form-status.error {
+  color: #ff6b6b;
+}
+
 .footer {
   background: var(--bg);
   border-top: 1px solid var(--border);
@@ -1174,7 +1283,9 @@ a, button, [role="button"] { cursor: pointer; }
   transition: color var(--t-base);
 }
 
-.footer-logo:hover { color: var(--accent); }
+.footer-logo:hover {
+  color: var(--accent);
+}
 
 .footer-tagline {
   font-family: var(--font-mono);
@@ -1192,14 +1303,18 @@ a, button, [role="button"] { cursor: pointer; }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px; height: 40px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-md);
   color: var(--text-3);
   border: 1px solid var(--border);
   transition: all var(--t-base);
 }
 
-.footer-social svg { width: 18px; height: 18px; }
+.footer-social svg {
+  width: 18px;
+  height: 18px;
+}
 
 .footer-social:hover {
   color: var(--accent);
@@ -1214,12 +1329,12 @@ a, button, [role="button"] { cursor: pointer; }
   font-family: var(--font-mono);
 }
 
-/* ── 15. BACK TO TOP ─────────────────────────────────────────── */
 .back-to-top {
   position: fixed;
   bottom: var(--space-8);
   right: var(--space-8);
-  width: 44px; height: 44px;
+  width: 44px;
+  height: 44px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -1248,9 +1363,11 @@ a, button, [role="button"] { cursor: pointer; }
   transform: translateY(-2px);
 }
 
-.back-to-top svg { width: 18px; height: 18px; }
+.back-to-top svg {
+  width: 18px;
+  height: 18px;
+}
 
-/* ── 16. SCROLL REVEAL ───────────────────────────────────────── */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -1262,32 +1379,63 @@ a, button, [role="button"] { cursor: pointer; }
   transform: translateY(0);
 }
 
-/* Stagger delays for groups */
 .reveal:nth-child(2) { transition-delay: 0.1s; }
 .reveal:nth-child(3) { transition-delay: 0.2s; }
 .reveal:nth-child(4) { transition-delay: 0.3s; }
 
-/* ── 17. RESPONSIVE ──────────────────────────────────────────── */
-
-/* Tablet */
 @media (max-width: 900px) {
-  .about-grid { grid-template-columns: 1fr; }
-  .about-portrait { order: -1; }
-  .portrait-frame { width: 160px; height: 160px; }
-  .portrait-initials { width: 130px; height: 130px; font-size: 3rem; }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
 
-  .resume-layout { grid-template-columns: 1fr; }
-  .resume-download { order: -1; }
-  .resume-card { display: flex; align-items: center; gap: var(--space-6); text-align: left; }
-  .resume-card-icon { margin: 0; flex-shrink: 0; }
-  .resume-btn { width: auto; }
+  .about-portrait {
+    order: -1;
+  }
 
-  .contact-layout { grid-template-columns: 1fr; }
+  .portrait-frame {
+    width: 160px;
+    height: 160px;
+  }
+
+  .portrait-initials {
+    width: 130px;
+    height: 130px;
+    font-size: 3rem;
+  }
+
+  .resume-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-download {
+    order: -1;
+  }
+
+  .resume-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    text-align: left;
+  }
+
+  .resume-card-icon {
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .resume-btn {
+    width: auto;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* Mobile nav */
 @media (max-width: 700px) {
-  .hamburger { display: flex; }
+  .hamburger {
+    display: flex;
+  }
 
   .nav-links {
     position: fixed;
@@ -1306,9 +1454,13 @@ a, button, [role="button"] { cursor: pointer; }
     backdrop-filter: blur(16px);
   }
 
-  .nav-links.open { transform: translateX(0); }
+  .nav-links.open {
+    transform: translateX(0);
+  }
 
-  .nav-link { font-size: 1rem; }
+  .nav-link {
+    font-size: 1rem;
+  }
 
   .hero-stats {
     flex-direction: column;
@@ -1316,24 +1468,40 @@ a, button, [role="button"] { cursor: pointer; }
     align-items: flex-start;
   }
 
-  .stat-divider { width: 40px; height: 1px; }
+  .stat-divider {
+    width: 40px;
+    height: 1px;
+  }
 
-  .form-row { grid-template-columns: 1fr; }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
 
-  .projects-grid { grid-template-columns: 1fr; }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* Small mobile */
 @media (max-width: 480px) {
-  .hero-cta { flex-direction: column; }
-  .btn { width: 100%; justify-content: center; }
+  .hero-cta {
+    flex-direction: column;
+  }
 
-  .hero-stats { width: 100%; }
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
 
-  .back-to-top { bottom: var(--space-6); right: var(--space-6); }
+  .hero-stats {
+    width: 100%;
+  }
+
+  .back-to-top {
+    bottom: var(--space-6);
+    right: var(--space-6);
+  }
 }
 
-/* ── KEYFRAME ENGINE: Smooth Fluid Drift ─────────────────────── */
 @keyframes aurora-fluid-drift {
   0% {
     transform: translate(0px, 0px) scale(1);
@@ -1361,25 +1529,17 @@ a, button, [role="button"] { cursor: pointer; }
   }
 }
 
-/* Base structural setup for the Hero area */
-.hero {
-  position: relative;
-  overflow: hidden; /* Ensures the large glowing fluid blobs don't spill out */
-}
-
-/* ── DARK MODE: High-End Tech Start-Up Glow ─────────────────── */
 [data-theme="dark"] .hero::after,
 [data-theme="dark"] .hero::before {
   content: '';
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px); /* Creates the flawless, premium glassmorphism blend */
+  filter: blur(100px);
   pointer-events: none;
   z-index: 0;
-  opacity: 0.45; /* Highly visible but perfectly blended */
+  opacity: 0.45;
 }
 
-/* Blob 1: The Cyan-Blue Engine */
 [data-theme="dark"] .hero::after {
   width: 450px;
   height: 450px;
@@ -1389,7 +1549,6 @@ a, button, [role="button"] { cursor: pointer; }
   animation: aurora-fluid-drift 15s ease-in-out infinite;
 }
 
-/* Blob 2: The Vivid Royal Purple Tail */
 [data-theme="dark"] .hero::before {
   width: 550px;
   height: 550px;
@@ -1399,21 +1558,12 @@ a, button, [role="button"] { cursor: pointer; }
   animation: aurora-fluid-drift-reverse 18s ease-in-out infinite alternate;
 }
 
-
-/* ── LIGHT MODE: Ultra-Soft Calm Ambiance (FIX) ──────────────── */
-[data-theme="light"] .hero {
-  position: relative;
-  background-color: #fafbfc; /* Cleaner, calmer slate backdrop */
-}
-
-/* ── LIGHT MODE: Sharp Angled Split Canvas ──────────────────── */
 [data-theme="light"] .hero {
   position: relative;
   background-color: #ffffff;
   overflow: hidden;
 }
 
-/* Creates a sharp, highly visible angled color block on the right half of the screen */
 [data-theme="light"] .hero::after {
   content: '';
   position: absolute;
@@ -1421,20 +1571,14 @@ a, button, [role="button"] { cursor: pointer; }
   right: -10%;
   width: 55%;
   height: 100%;
-  
-  /* The exact blue-to-purple brand gradient from your preview card */
   background: linear-gradient(135deg, rgba(37, 99, 235, 0.12) 0%, rgba(109, 40, 217, 0.15) 100%);
-  
-  /* Cuts the background at a sharp, premium tech angle */
   transform: skewX(-12deg);
   transform-origin: top right;
-  
   pointer-events: none;
   z-index: 0;
   border-left: 1px solid rgba(37, 99, 235, 0.15);
 }
 
-/* Optional: Add a single decorative floating circular ring on the gradient side */
 [data-theme="light"] .hero::before {
   content: '';
   position: absolute;
