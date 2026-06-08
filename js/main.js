@@ -16,7 +16,7 @@ document.body.style.overflow = "hidden";
 const navHeader = document.getElementById("navHeader");
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
-const navLinkEls = navLinks.querySelectorAll(".nav-link");
+const navLinkEls = navLinks ? navLinks.querySelectorAll(".nav-link") : [];
 
 window.addEventListener("scroll", () => {
   navHeader.classList.toggle("scrolled", window.scrollY > 30);
@@ -24,30 +24,70 @@ window.addEventListener("scroll", () => {
   toggleBackToTop();
 }, { passive: true });
 
-hamburger.addEventListener("click", () => {
-  const open = navLinks.classList.toggle("open");
-  hamburger.classList.toggle("open", open);
-  hamburger.setAttribute("aria-expanded", open);
-  document.body.style.overflow = open ? "hidden" : "";
-});
+if (hamburger && navLinks) {
+  function openMenu() {
+    hamburger.classList.add("open");
+    navLinks.classList.add("open");
+    hamburger.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "";
+  }
 
-navLinkEls.forEach((link) => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
+  function closeMenu() {
     hamburger.classList.remove("open");
+    navLinks.classList.remove("open");
     hamburger.setAttribute("aria-expanded", "false");
     document.body.style.overflow = "";
+  }
+
+  hamburger.addEventListener("click", () => {
+    if (navLinks.classList.contains("open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   });
-});
+
+  navLinkEls.forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("click", (event) => {
+    const isClickInsideMenu = navLinks.contains(event.target);
+    const isClickOnHamburger = hamburger.contains(event.target);
+    
+    if (navLinks.classList.contains("open") && !isClickInsideMenu && !isClickOnHamburger) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && navLinks.classList.contains("open")) {
+      closeMenu();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 700 && navLinks.classList.contains("open")) {
+      closeMenu();
+    }
+  });
+}
 
 function updateActiveLink() {
   const sections = document.querySelectorAll("main section[id], footer[id]");
   let current = "";
 
-  sections.forEach((sec) => {
-    const top = sec.offsetTop - 120;
-    if (window.scrollY >= top) current = sec.id;
-  });
+  // Check if the user has reached the absolute bottom of the page viewport
+  const isAtBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 50);
+
+  if (isAtBottom) {
+    current = "mainFooter";
+  } else {
+    sections.forEach((sec) => {
+      const top = sec.offsetTop - 120;
+      if (window.scrollY >= top) current = sec.id;
+    });
+  }
 
   navLinkEls.forEach((link) => {
     const href = link.getAttribute("href").slice(1);
@@ -61,12 +101,14 @@ const html = document.documentElement;
 const savedTheme = localStorage.getItem("ds-theme") || "dark";
 html.setAttribute("data-theme", savedTheme);
 
-themeToggle.addEventListener("click", () => {
-  const current = html.getAttribute("data-theme");
-  const next = current === "dark" ? "light" : "dark";
-  html.setAttribute("data-theme", next);
-  localStorage.setItem("ds-theme", next);
-});
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const current = html.getAttribute("data-theme");
+    const next = current === "dark" ? "light" : "dark";
+    html.setAttribute("data-theme", next);
+    localStorage.setItem("ds-theme", next);
+  });
+}
 
 const typedEl = document.getElementById("heroTyped");
 const phrases = [
@@ -150,12 +192,16 @@ skillCards.forEach((card) => skillObserver.observe(card));
 const backToTop = document.getElementById("backToTop");
 
 function toggleBackToTop() {
-  backToTop.classList.toggle("visible", window.scrollY > 400);
+  if (backToTop) {
+    backToTop.classList.toggle("visible", window.scrollY > 400);
+  }
 }
 
-backToTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+if (backToTop) {
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
 
 const footerYear = document.getElementById("footerYear");
 if (footerYear) footerYear.textContent = new Date().getFullYear();
