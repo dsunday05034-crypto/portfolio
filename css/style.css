@@ -98,6 +98,10 @@ body {
   width: 100%;
 }
 
+body.is-loading {
+  overflow: hidden;
+}
+
 img,
 svg,
 video,
@@ -705,7 +709,6 @@ button,
   width: 280px; 
   max-width: 85%;      
   aspect-ratio: 1 / 1;
-  
   position: relative;
   overflow: hidden;
   background: var(--surface);
@@ -723,7 +726,6 @@ button,
     height: 350px;
   }
 }
-
 
 .portrait-img {
   width: 100%;
@@ -1525,9 +1527,7 @@ button,
   z-index: 1;
 }
 
-/* RESPONSIVE DESIGN*/
-
-/* Tablet (900px and below) */
+/* Tablet Layout Modifications */
 @media (max-width: 900px) {
   .about-grid {
     grid-template-columns: 1fr;
@@ -1535,17 +1535,6 @@ button,
 
   .about-portrait {
     order: -1;
-  }
-
-  .portrait-frame {
-    width: 160px;
-    height: 160px;
-  }
-
-  .portrait-initials {
-    width: 130px;
-    height: 130px;
-    font-size: 3rem;
   }
 
   .resume-layout {
@@ -1577,7 +1566,6 @@ button,
   }
 }
 
-/* Mobile (700px and below) */
 @media (max-width: 700px) {
   .hamburger {
     display: flex;
@@ -1604,7 +1592,7 @@ button,
     align-items: center;
     gap: var(--space-6);
     padding: var(--space-8) var(--space-4);
-    background: #000000;
+    background: var(--bg-3);
     border-bottom: 1px solid var(--border);
     border-left: none;
     transform: translateY(-20px);
@@ -1648,7 +1636,7 @@ button,
   }
 }
 
-/* Small devices (480px and below)*/
+/* Small Screens */
 @media (max-width: 480px) {
   .container {
     padding-inline: 1rem;
@@ -1749,7 +1737,7 @@ button,
   }
 }
 
-/* Extra narrow devices (360px and below) */
+/* Extra Narrow Devices */
 @media (max-width: 360px) {
   .hero-name {
     font-size: 2.5rem;
