@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description"
+    content="Software developer and Economics graduate building backend applications with Go and modern web solutions with JavaScript, HTML, and CSS." />
+  <meta name="author" content="Daniel Sunday" />
+  <meta property="og:image" content="https://danielsunday.name.ng/preview.jpg" />
+  <meta name="twitter:image" content="https://danielsunday.name.ng/preview.jpg" />
+  <meta property="og:title" content="Daniel Sunday | Software Developer" />
+  <meta property="og:description" content="Building backend systems & web apps." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Daniel Sunday | Software Developer</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='2' fill='%23c5dc6d'/><text x='50' y='68' font-size='52' font-family='monospace' font-weight='500' fill='%230a0c0b' text-anchor='middle'>{DS}</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <div id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <span class="loader-initials">DS</span>
+      <div class="loader-bar">
+        <div class="loader-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav-header" id="navHeader">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a href="#hero" class="nav-logo" aria-label="Daniel Sunday home">
+        <span class="logo-bracket">{</span>DS<span class="logo-bracket">}</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#resume" class="nav-link">Resume</a></li>
+        <li><a href="#mainFooter" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle colour theme" title="Toggle theme">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="hero" class="hero" aria-label="Introduction">
+      <div class="hero-ferrofluid" id="heroFerrofluid" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <div class="reveal">
+          <h1 class="hero-name">
+            Daniel<br /><em>Sunday</em>
+          </h1>
+          <div class="hero-title-wrap" aria-label="Economics Graduate & Software Developer">
+            <span class="hero-title-static">// </span>
+            <span class="hero-typed" id="heroTyped" aria-live="polite"></span>
+            <span class="hero-cursor" aria-hidden="true">|</span>
+          </div>
+          <p class="hero-tagline">
+            I build reliable backend systems and practical software solutions. Focused on writing clean code, solving
+            complex problems, and creating software that delivers real-world value.
+
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">
+              <span>View Projects</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </a>
+            <a href="#mainFooter" class="btn btn-ghost">Contact Me</a>
+          </div>
+        </div>
+        <div class="hero-stats reveal" aria-label="Quick stats">
+          <div class="stat">
+            <span class="stat-num">7+</span>
+            <span class="stat-label">Systems Built</span>
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-hint" aria-label="Scroll to About section">
+        <span>Scroll</span>
+        <span class="scroll-hint-line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <section id="about" class="section about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">01 / about</span>
+          <h2 id="about-heading" class="section-title">Engineering Philosophy</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-portrait reveal" aria-hidden="true">
+            <div class="portrait-frame">
+              <img src="profile.jpg" alt="Daniel Eromosele Sunday" class="portrait-img" width="700" height="933"
+                loading="eager">
+            </div>
+          </div>
+          <div class="about-text reveal">
+            <p class="about-lead">
+              Economics graduate turned software engineer. I build reliable backend systems, web applications, and
+              practical software solutions.
+            </p>
+
+            <p>
+              Studying Economics trained me to think about efficiency, optimization, and solving problems with limited
+              resources. I transitioned into software engineering to apply that same analytical mindset to developing
+              and building systems.
+            </p>
+
+            <p>
+              My focus is on backend engineering, where I enjoy building reliable systems, integrating APIs and external
+              services, working with data, and writing software that is clean, efficient, and maintainable. I also
+              explore areas like automation, AI-driven applications, and tools that solve real-world problems.
+            </p>
+
+            <p>
+              I learn by studying technical documentation, breaking systems to understand how they work, debugging
+              complex problems, and turning ideas into functional projects. I value writing clear code, understanding
+              systems deeply, and continuously improving as an engineer.
+            </p>
+
+
+            <div class="about-badges" aria-label="Quick facts">
+              <span class="badge">Abuja, Nigeria</span>
+              <span class="badge">Economics Graduate</span>
+              <span class="badge">Backend Developer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">02 / skills</span>
+          <h2 id="skills-heading" class="section-title">Toolkit</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title">
+              <span class="skill-group-icon" aria-hidden="true"></></span>
+              Languages
+            </h3>
+            <div class="skill-cards">
+              <div class="skill-card" data-level="85">
+                <span class="skill-name">Python</span>
+              </div>
+              <div class="skill-card" data-level="85">
+                <span class="skill-name">Go (Golang)</span>
+              </div>
+              <div class="skill-card" data-level="75">
+                <span class="skill-name">JavaScript</span>
+              </div>
+              <div class="skill-card" data-level="90">
+                <span class="skill-name">HTML</span>
+              </div>
+              <div class="skill-card" data-level="80">
+                <span class="skill-name">CSS</span>
+              </div>
+            </div>
+          </div>
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title">
+              <span class="skill-group-icon" aria-hidden="true">⚙</span>
+              Tools
+            </h3>
+            <div class="about-badges" aria-label="Tools and environment">
+              <span class="badge badge-tool" data-color="#F05032">
+                <svg class="tool-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"
+                  aria-hidden="true">
+                  <path
+                    d="M23.44 10.59L13.41.56a1.83 1.83 0 0 0-2.59 0L8.24 3.12l3.12 3.12a1.88 1.88 0 0 1 2.39 2.4l3.06 3.06a1.88 1.88 0 1 1-1.15 1.07l-2.89-2.89v7.37a1.88 1.88 0 1 1-1.59-.15v-7.28a1.88 1.88 0 0 1-1.02-2.45L8.06 7.69a1.88 1.88 0 0 1-2.63 0L.56 12.56a1.83 1.83 0 0 0 0 2.59l10.03 10.03a1.83 1.83 0 0 0 2.59 0l10.26-10.26a1.83 1.83 0 0 0 0-2.59z" />
+                </svg>
+                Git
+              </span>
+              <span class="badge badge-tool" data-color="#F0F0F0">
+                <svg class="tool-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"
+                  aria-hidden="true">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+                GitHub
+              </span>
+              <span class="badge badge-tool" data-color="#FCC624">
+                <svg class="tool-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"
+                  aria-hidden="true">
+                  <path
+                    d="M12.001 17.275l-4.164-1.668v-4.14l4.164-5.783 4.164 5.783v4.14zM12 6.097L8.577 10.86v3.06l3.423 1.372 3.423-1.372v-3.06z" />
+                </svg>
+                Linux
+              </span>
+              <span class="badge badge-tool" data-color="#007ACC">
+                <svg class="tool-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"
+                  aria-hidden="true">
+                  <path
+                    d="M23.15 2.587L18.21.21a1.166 1.166 0 0 0-1.32.183l-8.7 7.7-3.69-2.77a.777.777 0 0 0-.926.04L.847 3.05a.783.783 0 0 0-.24.566v16.463a.782.782 0 0 0 .24.566l3.418 2.573a.777.777 0 0 0 .926-.04l3.792-2.906 8.034 7.333a1.165 1.165 0 0 0 1.32-.183l4.94-2.377A1.158 1.158 0 0 0 24 19.686V4.314a1.158 1.158 0 0 0-.85-1.727zM9.543 14.62l-3.418-2.573V5.293l3.418 2.573zm11.056 5.494l-8.034-7.333V7.297l8.034 7.333z" />
+                </svg>
+                VS Code
+              </span>
+            </div>
+          </div>
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title">
+              <span class="skill-group-icon" aria-hidden="true">◈</span>
+              Concepts
+            </h3>
+            <div class="about-badges" aria-label="Core engineering concepts">
+              <span class="badge">REST APIs</span>
+              <span class="badge">Backend Development</span>
+              <span class="badge">Problem Solving</span>
+              <span class="badge">Data Structures &amp; Algorithms</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">03 / projects</span>
+          <h2 id="projects-heading" class="section-title">Featured Projects</h2>
+        </div>
+        <div class="projects-showcase reveal">
+          <div class="projects-info">
+            <p class="projects-lead">
+              A selection of projects showcasing backend engineering with Go and full-stack web development.
+            </p>
+            <div class="projects-nav">
+              <button class="projects-nav-btn" id="prevProject" aria-label="Previous project">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+              <button class="projects-nav-btn" id="nextProject" aria-label="Next project">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div id="cardSwap"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume" class="section resume" aria-labelledby="resume-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">04 / resume</span>
+          <h2 id="resume-heading" class="section-title">Timeline</h2>
+        </div>
+        <div class="resume-layout">
+          <div class="resume-summary reveal">
+            <h3 class="resume-subtitle">Career Summary</h3>
+            <p>
+              Software engineer focused on building clean, reliable, and high-performance systems. With a background in
+              Economics, I bring a practical, analytical approach to problem-solving and enjoy designing scalable
+              solutions that are efficient, maintainable, and built to last. I thrive on understanding how systems work
+              under the hood, solving complex technical challenges, and continuously learning new technologies to build
+              software that delivers real value.
+            </p>
+
+            <h3 class="resume-subtitle">Experience</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot" aria-hidden="true"></div>
+                <div>
+                  <span class="timeline-period">2026 — Present</span>
+                  <h4 class="timeline-role">Software Developer Fellow (Learn2Earn)</h4>
+                  <p class="timeline-desc">
+                    Engineering backend tools and structured web interfaces. Writing concurrent code architectures in
+                    Go, optimizing file processing pipelines, and exploring algorithmic efficiency through regular code
+                    reviews.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="resume-subtitle">Education</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot" aria-hidden="true"></div>
+                <div>
+                  <span class="timeline-period">2019 — 2023</span>
+                  <h4 class="timeline-role">B.Sc. Economics (Second Class Upper)</h4>
+                  <p class="timeline-desc">
+                    Bingham University. Completed comprehensive training in mathematical modeling, resource distribution
+                    logic, quantitative reasoning, and statistical data frameworks.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="resume-download reveal">
+            <div class="resume-card">
+              <div class="resume-card-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                  <polyline points="10 9 9 9 8 9" />
+                </svg>
+              </div>
+              <p class="resume-card-label">Daniel_Sunday_Resume.pdf</p>
+              <a href="assets/Daniel_Sunday_Resume.pdf" class="btn btn-primary resume-btn"
+                aria-label="View Daniel Sunday's resume in a new tab" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+                view resume
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="mainFooter" class="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <a href="#hero" class="footer-logo" aria-label="Daniel Sunday — back to top">
+        <span class="logo-bracket">{</span>DS<span class="logo-bracket">}</span>
+      </a>
+      <p class="footer-tagline">Architecture driven by curiosity and continuous growth.</p>
+
+      <p class="footer-contact-heading">Contact</p>
+
+      <div class="footer-socials" aria-label="Social links">
+        <a href="https://github.com/dsunday05034-crypto" class="footer-social" aria-label="GitHub"
+          rel="noopener noreferrer" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/daniel-sunday-09a705373" class="footer-social" aria-label="LinkedIn"
+          rel="noopener noreferrer" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+        </a>
+        <a href="mailto:dsunday05034@gmail.com" class="footer-social" aria-label="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+        </a>
+      </div>
+
+      <p class="footer-copy">
+        &copy; <span id="footerYear"></span> Daniel Sunday. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
+  </button>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
