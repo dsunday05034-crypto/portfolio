@@ -576,12 +576,14 @@ if (cardSwapEl) {
     },
   ];
 
+  const isMobileStack = window.matchMedia('(max-width: 768px)').matches;
+
   initCardSwap(cardSwapEl, {
     cards: projectCards,
     delay: 5000,
     pauseOnHover: true,
-    cardDistance: 30,
-    verticalDistance: 40,
+    cardDistance: isMobileStack ? 16 : 30,
+    verticalDistance: isMobileStack ? 22 : 40,
   });
 
   if (prevBtn && nextBtn) {

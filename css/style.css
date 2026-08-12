@@ -1305,6 +1305,7 @@ button,
 
   .projects-showcase {
     grid-template-columns: 1fr;
+    gap: var(--space-8);
   }
 
   .projects-info {
@@ -1312,10 +1313,20 @@ button,
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: var(--space-4);
+    z-index: 2;
   }
 
   .projects-lead {
     margin-bottom: 0;
+    flex: 1;
+    min-width: 0;
+  }
+
+  #cardSwap {
+    position: relative;
+    z-index: 1;
+    padding-top: var(--space-12);
   }
 
   .resume-layout {
@@ -1595,6 +1606,7 @@ button,
   flex-wrap: wrap;
   gap: var(--space-2);
   margin-bottom: var(--space-6);
+  flex-shrink: 0;
 }
 
 .card-swap-card .swap-card-tech li {
@@ -1613,6 +1625,8 @@ button,
   display: flex;
   gap: var(--space-3);
   flex-wrap: wrap;
+  margin-top: auto;
+  flex-shrink: 0;
 }
 
 .card-swap-dots {
@@ -1641,15 +1655,43 @@ button,
 @media (max-width: 768px) {
   .card-swap-container {
     max-width: 100%;
-    height: 380px;
+    height: 460px;
+  }
+
+  .card-swap-card .swap-card-title {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-3);
+  }
+
+  .card-swap-card .swap-card-desc {
+    font-size: 0.85rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .card-swap-card .swap-card-tech {
+    margin-bottom: var(--space-4);
   }
 }
 
 @media (max-width: 480px) {
   .card-swap-container {
-    height: 340px;
+    height: 480px;
   }
+
   .card-swap-card .swap-card-inner {
     padding: var(--space-6);
+  }
+
+  .card-swap-card .swap-card-number {
+    margin-bottom: var(--space-3);
+  }
+
+  .card-swap-card .swap-card-title {
+    font-size: 1.15rem;
+  }
+
+  .card-swap-card .swap-card-desc {
+    font-size: 0.82rem;
+    line-height: 1.55;
   }
 }
