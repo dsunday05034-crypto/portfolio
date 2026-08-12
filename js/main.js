@@ -523,22 +523,27 @@ const prevBtn = document.getElementById('prevProject');
 const nextBtn = document.getElementById('nextProject');
 
 if (heroFerrofluid) {
-  initFerrofluid(heroFerrofluid, {
-    colors: ['#c5dc6d', '#a2b499', '#8a9189'],
-    speed: 0.3,
-    scale: 1.8,
-    turbulence: 0.8,
-    fluidity: 0.15,
-    rimWidth: 0.25,
-    sharpness: 3,
-    shimmer: 1.2,
-    glow: 1.5,
-    flowDirection: 'down',
-    opacity: 0.6,
-    mouseInteraction: true,
-    mouseStrength: 0.8,
-    mouseRadius: 0.3,
-  });
+  const preferMotion = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isDesktopHero = window.matchMedia('(min-width: 769px)').matches;
+
+  if (preferMotion && isDesktopHero) {
+    initFerrofluid(heroFerrofluid, {
+      colors: ['#c5dc6d', '#a2b499', '#8a9189'],
+      speed: 0.3,
+      scale: 1.8,
+      turbulence: 0.8,
+      fluidity: 0.15,
+      rimWidth: 0.25,
+      sharpness: 3,
+      shimmer: 1.2,
+      glow: 1.5,
+      flowDirection: 'down',
+      opacity: 0.6,
+      mouseInteraction: true,
+      mouseStrength: 0.8,
+      mouseRadius: 0.3,
+    });
+  }
 }
 
 if (cardSwapEl) {
