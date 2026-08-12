@@ -117,37 +117,63 @@ if (themeToggle) {
 }
 
 const phrases = ["Economics Graduate", "Software Developer", "Backend Engineer", "Problem Solver"];
-let phraseIndex = 0, charIndex = 0, isDeleting = false, typingDelay = 110;
+const typedLiveEl = document.getElementById("heroTypedLive");
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typingTimer = null;
+
+function scheduleType(delay) {
+  if (typingTimer) clearTimeout(typingTimer);
+  typingTimer = setTimeout(type, delay);
+}
 
 function type() {
   if (!typedEl) return;
+
+  if (document.hidden) {
+    scheduleType(400);
+    return;
+  }
+
   const currentText = phrases[phraseIndex];
 
   if (isDeleting) {
-    typedEl.textContent = currentText.slice(0, charIndex--);
-    typingDelay = 55;
-  } else {
-    typedEl.textContent = currentText.slice(0, charIndex++);
-    typingDelay = 110;
+    charIndex = Math.max(0, charIndex - 1);
+    typedEl.textContent = currentText.slice(0, charIndex);
+    if (charIndex === 0) {
+      isDeleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      scheduleType(450);
+      return;
+    }
+    scheduleType(45);
+    return;
   }
 
-  if (!isDeleting && charIndex === currentText.length + 1) {
+  charIndex = Math.min(currentText.length, charIndex + 1);
+  typedEl.textContent = currentText.slice(0, charIndex);
+
+  if (charIndex === currentText.length) {
+    if (typedLiveEl) typedLiveEl.textContent = currentText;
     isDeleting = true;
-    typingDelay = 1800;
-  } else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    phraseIndex = (phraseIndex + 1) % phrases.length;
-    typingDelay = 500;
+    scheduleType(1800);
+    return;
   }
-  setTimeout(type, typingDelay);
+
+  scheduleType(100);
 }
 
 function triggerHeroReveal() {
   document.querySelectorAll(".hero .reveal").forEach((el, i) => {
     setTimeout(() => el.classList.add("in-view"), i * 150);
   });
-  setTimeout(type, 800);
+  scheduleType(800);
 }
+
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden && typedEl) scheduleType(200);
+});
 
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
