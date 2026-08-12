@@ -402,13 +402,21 @@ button,
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  padding-top: 100px;
-  padding-bottom: var(--space-16);
+  padding-top: 88px;
+  padding-bottom: var(--space-12);
   background-color: var(--bg);
+}
+
+@media (min-height: 900px) {
+  .hero {
+    min-height: auto;
+    padding-top: 120px;
+    padding-bottom: var(--space-16);
+  }
 }
 
 .hero::before {
@@ -425,10 +433,58 @@ button,
 .hero-inner {
   position: relative;
   z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(var(--space-6), 5vw, var(--space-14));
+  align-items: center;
+  width: 100%;
+}
+
+.hero-content {
   display: flex;
   flex-direction: column;
-  gap: var(--space-10);
   align-items: flex-start;
+  min-width: 0;
+  gap: 0;
+}
+
+.hero-portrait {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.hero-portrait::before {
+  content: '';
+  position: absolute;
+  width: calc(100% + 28px);
+  height: calc(100% + 28px);
+  border-radius: 50%;
+  border: 1px solid rgba(var(--accent-rgb), 0.18);
+  pointer-events: none;
+}
+
+.hero-portrait .portrait-frame {
+  width: clamp(220px, 28vw, 320px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 1px rgba(var(--accent-rgb), 0.12),
+    0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+.hero-portrait .portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.hero-portrait .portrait-frame:hover .portrait-img {
+  transform: scale(1.06);
 }
 
 @keyframes blink {
@@ -438,9 +494,9 @@ button,
 
 .hero-name {
   font-family: "Cabinet Grotesk", "Syne", sans-serif;
-  font-size: clamp(3rem, 9vw, 6.5rem);
+  font-size: clamp(2.75rem, 7.5vw, 5.5rem);
   font-weight: 800;
-  line-height: 0.88;
+  line-height: 0.9;
   letter-spacing: -0.05em;
   color: var(--text);
 }
@@ -479,18 +535,19 @@ button,
 }
 
 .hero-tagline {
-  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
   color: var(--text-2);
   font-weight: 300;
-  max-width: 50ch;
-  line-height: 1.7;
+  max-width: 42ch;
+  line-height: 1.65;
+  margin-top: var(--space-4);
 }
 
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-4);
-  margin-top: var(--space-4);
+  gap: var(--space-3);
+  margin-top: var(--space-6);
 }
 
 .hero-stats {
@@ -498,7 +555,7 @@ button,
   background-color: transparent;
   border: none;
   padding: 0;
-  margin-top: var(--space-2);
+  margin-top: var(--space-6);
   width: auto;
 }
 
@@ -643,25 +700,12 @@ button,
   border-bottom: 1px solid var(--border);
 }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: clamp(var(--space-12), 6vw, var(--space-24));
-  align-items: start;
-}
-
-.about-portrait {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  align-self: end;
-  width: 100%;
-  position: sticky;
-  top: 120px;
+.about-text {
+  max-width: 72ch;
 }
 
 .portrait-frame {
-  width: 320px;
+  width: 280px;
   max-width: 100%;
   aspect-ratio: 3 / 4;
   position: relative;
@@ -1291,16 +1335,37 @@ button,
     border-top: none;
   }
 
-  .about-grid {
-    grid-template-columns: 1fr;
+  .hero {
+    min-height: auto;
+    padding-top: 96px;
+    padding-bottom: var(--space-12);
   }
 
-  .about-portrait {
-    order: -1;
-    position: static;
+  .hero-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--space-4);
+    align-items: center;
+  }
+
+  .hero-portrait {
     align-self: start;
-    display: flex;
-    justify-content: center;
+  }
+
+  .hero-portrait::before {
+    width: calc(100% + 14px);
+    height: calc(100% + 14px);
+  }
+
+  .hero-portrait .portrait-frame {
+    width: clamp(104px, 26vw, 140px);
+  }
+
+  .hero-name {
+    font-size: clamp(2.3rem, 8vw, 3.4rem);
+  }
+
+  .hero-tagline {
+    max-width: none;
   }
 
   .projects-showcase {
@@ -1435,16 +1500,33 @@ button,
     padding-inline: 1rem;
   }
 
+  .hero {
+    padding-top: 88px;
+    padding-bottom: var(--space-10);
+  }
+
+  .hero-inner {
+    gap: var(--space-3);
+  }
+
   .hero-name {
-    font-size: clamp(2.8rem, 14vw, 4.5rem);
+    font-size: clamp(2.2rem, 10vw, 2.9rem);
+  }
+
+  .hero-title-wrap {
+    margin-top: var(--space-3);
+    font-size: 0.75rem;
   }
 
   .hero-tagline {
     font-size: 0.9rem;
+    margin-top: var(--space-4);
   }
 
   .hero-cta {
     flex-direction: column;
+    margin-top: var(--space-5);
+    width: 100%;
   }
 
   .btn {
@@ -1454,6 +1536,7 @@ button,
 
   .hero-stats {
     align-items: flex-start;
+    margin-top: var(--space-5);
   }
 
   .stat-num {
@@ -1464,8 +1547,8 @@ button,
     font-size: 0.6rem;
   }
 
-  .portrait-frame {
-    width: 240px;
+  .hero-portrait .portrait-frame {
+    width: 96px;
   }
 
   .about-lead {
@@ -1511,7 +1594,7 @@ button,
 
 @media (max-width: 360px) {
   .hero-name {
-    font-size: 2.5rem;
+    font-size: 2.05rem;
   }
 
   .btn {
@@ -1527,8 +1610,8 @@ button,
     font-size: 1.8rem;
   }
 
-  .portrait-frame {
-    width: 200px;
+  .hero-portrait .portrait-frame {
+    width: 84px;
   }
 }
 

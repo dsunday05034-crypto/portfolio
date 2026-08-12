@@ -1,0 +1,10 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
+.vscode/
+.idea/
+
+# Local / env
+.env
+.env.*
