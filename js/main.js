@@ -1,5 +1,3 @@
-import { Renderer, Program, Mesh, Triangle } from 'https://cdn.jsdelivr.net/npm/ogl@1.0.11/src/index.js';
-
 const loader = document.getElementById("loader");
 const html = document.documentElement;
 const themeToggle = document.getElementById("themeToggle");
@@ -14,9 +12,27 @@ const footerYear = document.getElementById("footerYear");
 const savedTheme = localStorage.getItem("ds-theme") || "dark";
 html.setAttribute("data-theme", savedTheme);
 
+function setAppHeight() {
+  html.style.setProperty("--app-height", `${window.innerHeight}px`);
+}
+
+setAppHeight();
+window.addEventListener("orientationchange", () => {
+  setTimeout(setAppHeight, 150);
+});
+
+let appHeightWidth = window.innerWidth;
+window.addEventListener("resize", () => {
+  if (window.innerWidth !== appHeightWidth) {
+    appHeightWidth = window.innerWidth;
+    setAppHeight();
+  }
+}, { passive: true });
+
 document.body.classList.add("is-loading");
 
 window.addEventListener("load", () => {
+  setAppHeight();
   setTimeout(() => {
     if (loader) loader.classList.add("hidden");
     document.body.classList.remove("is-loading");
@@ -409,7 +425,7 @@ void main() {
   vec4 color; mainImage(color, vUv * iResolution.xy); gl_FragColor = color;
 }`;
 
-function initFerrofluid(container, options = {}) {
+async function initFerrofluid(container, options = {}) {
   const {
     colors = ['#ffffff', '#ffffff', '#ffffff'],
     speed = 0.5, scale = 1.6, turbulence = 1, fluidity = 0.1,
@@ -418,6 +434,13 @@ function initFerrofluid(container, options = {}) {
     mouseInteraction = true, mouseStrength = 1, mouseRadius = 0.35, mouseDampening = 0.15,
     dpr
   } = options;
+
+  let Renderer, Program, Mesh, Triangle;
+  try {
+    ({ Renderer, Program, Mesh, Triangle } = await import('https://cdn.jsdelivr.net/npm/ogl@1.0.11/src/index.js'));
+  } catch (e) {
+    return { destroy() {} };
+  }
 
   let renderer = null, program = null, mesh = null, geometry = null;
   let rafId = null, destroyed = false;
