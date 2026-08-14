@@ -118,10 +118,14 @@ body {
 }
 
 .hero,
-header,
 main {
   max-width: 100%;
   overflow-x: hidden;
+}
+
+header {
+  max-width: 100%;
+  overflow: visible;
 }
 
 body.is-loading {
