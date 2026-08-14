@@ -1,0 +1,126 @@
+### This is the log of me scrolling through the site on my mobile device
+
+[33.40s] visualViewport resize -> 375x702
+[33.42s] window resize -> 375x690 (was 375x702)
+[33.42s] visualViewport resize -> 375x690
+[33.44s] visualViewport resize -> 375x688
+[33.46s] visualViewport resize -> 375x681
+[33.48s] visualViewport resize -> 375x671
+[33.49s] visualViewport resize -> 375x661
+[33.51s] visualViewport resize -> 375x652
+[33.53s] visualViewport resize -> 375x644
+[33.54s] visualViewport resize -> 375x638
+[33.56s] visualViewport resize -> 375x633
+[33.58s] visualViewport resize -> 375x629
+[33.59s] visualViewport resize -> 375x626
+[33.61s] visualViewport resize -> 375x623
+[33.63s] visualViewport resize -> 375x621
+[33.64s] visualViewport resize -> 375x620
+[33.66s] visualViewport resize -> 375x619
+[33.68s] visualViewport resize -> 375x618
+[33.71s] visualViewport resize -> 375x617
+[33.80s] visualViewport resize -> 375x616
+[34.11s] window resize -> 375x616 (was 375x690)
+[34.43s] window resize -> 375x647 (was 375x616)
+[34.43s] visualViewport resize -> 375x647
+[34.45s] visualViewport resize -> 375x648
+[34.46s] visualViewport resize -> 375x654
+[34.48s] visualViewport resize -> 375x662
+[34.49s] visualViewport resize -> 375x670
+[34.51s] visualViewport resize -> 375x678
+[34.53s] visualViewport resize -> 375x685
+[34.54s] visualViewport resize -> 375x691
+[34.56s] visualViewport resize -> 375x696
+[34.58s] visualViewport resize -> 375x699
+[34.59s] visualViewport resize -> 375x702
+[34.61s] visualViewport resize -> 375x704
+[34.63s] visualViewport resize -> 375x706
+[34.64s] visualViewport resize -> 375x707
+[34.66s] visualViewport resize -> 375x708
+[34.69s] visualViewport resize -> 375x709
+[34.73s] visualViewport resize -> 375x710
+[35.11s] window resize -> 375x710 (was 375x647)
+[36.65s] window resize -> 375x686 (was 375x710)
+[36.65s] visualViewport resize -> 375x686
+[36.66s] visualViewport resize -> 375x685
+[36.68s] visualViewport resize -> 375x679
+[36.69s] visualViewport resize -> 375x670
+[36.71s] visualViewport resize -> 375x660
+[36.73s] visualViewport resize -> 375x652
+[36.74s] visualViewport resize -> 375x644
+[36.76s] visualViewport resize -> 375x638
+[36.78s] visualViewport resize -> 375x633
+[36.79s] visualViewport resize -> 375x629
+[36.81s] visualViewport resize -> 375x626
+[36.83s] visualViewport resize -> 375x623
+[36.84s] visualViewport resize -> 375x621
+[36.86s] visualViewport resize -> 375x620
+[36.88s] visualViewport resize -> 375x619
+[36.89s] visualViewport resize -> 375x618
+[36.94s] visualViewport resize -> 375x617
+[37.01s] visualViewport resize -> 375x616
+[37.33s] window resize -> 375x616 (was 375x686)
+
+
+### And this is the log for when i zoom in, the line doesn’t show, its when i zoom out completely, the lines appears and it appears just on that top section, the hero section
+
+[99.31s] window resize -> 218x363 (was 218x364)
+[99.32s] window resize -> 218x362 (was 218x363)
+[99.32s] visualViewport resize -> 218x362
+[99.36s] window resize -> 218x362 (was 218x362)
+[99.37s] window resize -> 218x361 (was 218x362)
+[99.38s] visualViewport resize -> 218x361
+[99.39s] window resize -> 218x360 (was 218x361)
+[99.39s] visualViewport resize -> 218x360
+[99.41s] window resize -> 218x360 (was 218x360)
+[99.44s] window resize -> 218x360 (was 218x360)
+[99.46s] visualViewport resize -> 218x359
+[99.47s] window resize -> 218x359 (was 218x360)
+[99.59s] window resize -> 218x358 (was 218x359)
+[99.59s] visualViewport resize -> 218x358
+[103.88s] visualViewport resize -> 220x362
+[103.89s] visualViewport resize -> 236x387
+[103.94s] visualViewport resize -> 264x433
+[103.96s] visualViewport resize -> 273x449
+[103.98s] visualViewport resize -> 289x474
+[104.01s] visualViewport resize -> 296x486
+[104.04s] visualViewport resize -> 308x506
+[104.06s] visualViewport resize -> 310x510
+[104.11s] visualViewport resize -> 309x508
+[108.00s] visualViewport resize -> 315x517
+[108.06s] visualViewport resize -> 335x551
+[108.09s] visualViewport resize -> 345x567
+[108.13s] visualViewport resize -> 348x572
+[108.16s] window resize -> 346x563 (was 218x358)
+[108.17s] visualViewport resize -> 346x563
+[108.17s] document.documentElement ResizeObserver fired, scrollHeight=5783
+[108.19s] window resize -> 346x564 (was 346x563)
+[108.22s] window resize -> 346x565 (was 346x564)
+[108.22s] visualViewport resize -> 346x565
+[108.26s] window resize -> 346x566 (was 346x565)
+[108.26s] visualViewport resize -> 346x566
+[108.32s] window resize -> 346x567 (was 346x566)
+[108.36s] visualViewport resize -> 346x567
+[108.39s] window resize -> 346x568 (was 346x567)
+[108.39s] visualViewport resize -> 346x568
+[108.42s] visualViewport resize -> 346x569
+[112.80s] visualViewport resize -> 370x607
+[112.83s] visualViewport resize -> 393x665
+[112.86s] visualViewport resize -> 393x667
+[113.06s] window resize -> 384x636 (was 346x568)
+[113.06s] visualViewport resize -> 384x636
+[113.06s] document.documentElement ResizeObserver fired, scrollHeight=5856
+[113.09s] window resize -> 384x634 (was 384x636)
+[113.09s] visualViewport resize -> 384x634
+[113.12s] window resize -> 384x633 (was 384x634)
+[113.12s] visualViewport resize -> 384x633
+[113.16s] window resize -> 384x632 (was 384x633)
+[113.16s] visualViewport resize -> 384x632
+[113.19s] visualViewport resize -> 384x631
+[113.26s] window resize -> 384x631 (was 384x632)
+[114.69s] visualViewport resize -> 380x624
+[120.66s] visualViewport resize -> 384x631
+[124.72s] visualViewport resize -> 380x624
+[125.66s] visualViewport resize -> 384x631
+[129.69s] visualViewport resize -> 380x624
+[130.66s] visualViewport resize -> 384x631
