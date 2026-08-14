@@ -530,13 +530,23 @@ button,
 }
 
 .hero-title-wrap {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  min-height: 1.5em;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: middle;
   gap: 0;
   font-family: var(--font-mono);
   font-size: clamp(0.8rem, 1.8vw, 1rem);
   color: var(--text-3);
   margin-top: var(--space-4);
+}
+
+.hero-typed {
+  display: inline-block;
+  min-width: 2px;          /* Gives a baseline width even when string is empty */
 }
 
 .hero-title-static {
