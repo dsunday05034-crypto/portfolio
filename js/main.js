@@ -443,11 +443,22 @@ void main() {
 async function initFerrofluid(container, options = {}) {
   const {
     colors = ['#ffffff', '#ffffff', '#ffffff'],
-    speed = 0.5, scale = 1.6, turbulence = 1, fluidity = 0.1,
-    rimWidth = 0.2, sharpness = 2.5, shimmer = 1.5, glow = 2,
-    flowDirection = 'down', opacity = 1,
-    mouseInteraction = true, mouseStrength = 1, mouseRadius = 0.35, mouseDampening = 0.15,
-    dpr
+    speed = 0.5,
+    scale = 1.6,
+    turbulence = 1,
+    fluidity = 0.1,
+    rimWidth = 0.2,
+    sharpness = 2.5,
+    shimmer = 1.5,
+    glow = 2,
+    flowDirection = 'down',
+    opacity = 1,
+    mouseInteraction = true,
+    mouseStrength = 1,
+    mouseRadius = 0.35,
+    mouseDampening = 0.15,
+    dpr,
+    maxFps = 30
   } = options;
 
   let Renderer, Program, Mesh, Triangle;
@@ -459,14 +470,35 @@ async function initFerrofluid(container, options = {}) {
 
   let renderer = null, program = null, mesh = null, geometry = null;
   let rafId = null, destroyed = false, isVisible = true;
+  let lastRenderTime = 0;
+  const frameInterval = 1000 / maxFps;
+
   const mouseTarget = [0, 0];
   let lastTime = 0;
 
   // Optimized: Cap DPR at 2 max to protect mobile and high-density screens from GPU spikes
-  const rawDpr = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1;
-  const rendererDpr = dpr ?? Math.min(rawDpr, 2);
+  const rawDpr =
+    typeof window !== 'undefined'
+      ? window.devicePixelRatio || 1
+      : 1;
 
-  renderer = new Renderer({ dpr: rendererDpr, alpha: true, antialias: true });
+  const isMobile =
+    typeof window !== 'undefined' &&
+    window.matchMedia('(max-width: 700px)').matches;
+
+  const isTablet =
+    typeof window !== 'undefined' &&
+    window.matchMedia('(max-width: 1024px)').matches;
+
+  const defaultDpr = isMobile
+    ? Math.min(rawDpr, 1.25)
+    : isTablet
+      ? Math.min(rawDpr, 1.5)
+      : Math.min(rawDpr, 2);
+
+  const rendererDpr = dpr ?? defaultDpr;
+
+  renderer = new Renderer({ dpr: rendererDpr, alpha: true, antialias: false });
   const gl = renderer.gl;
   const canvas = gl.canvas;
   gl.clearColor(0, 0, 0, 0);
@@ -518,6 +550,27 @@ async function initFerrofluid(container, options = {}) {
 
   visibilityObserver.observe(container);
 
+  const onDocumentVisibilityChange = () => {
+    if (document.hidden) {
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+      return;
+    }
+
+    if (isVisible && !destroyed && !rafId) {
+      lastTime = performance.now();
+      lastRenderTime = 0;
+      rafId = requestAnimationFrame(loop);
+    }
+  };
+
+  document.addEventListener(
+    'visibilitychange',
+    onDocumentVisibilityChange
+  );
+
   const onPointerMove = e => {
     const rect = canvas.getBoundingClientRect();
     const sc = renderer.dpr || 1;
@@ -534,29 +587,44 @@ async function initFerrofluid(container, options = {}) {
   const loop = t => {
     if (destroyed) return;
 
-    // Stop requesting new frames if off-screen
-    if (!isVisible) {
+    if (!isVisible || document.hidden) {
       rafId = null;
       return;
     }
 
     rafId = requestAnimationFrame(loop);
+
+    if (t - lastRenderTime < frameInterval) {
+      return;
+    }
+
+    lastRenderTime = t;
     uniforms.iTime.value = t * 0.001;
 
     if (mouseDampening > 0) {
       if (!lastTime) lastTime = t;
+
       const dt = (t - lastTime) / 1000;
       lastTime = t;
+
       const tau = Math.max(1e-4, mouseDampening);
       let factor = 1 - Math.exp(-dt / tau);
+
       if (factor > 1) factor = 1;
+
       const cur = uniforms.iMouse.value;
+
       cur[0] += (mouseTarget[0] - cur[0]) * factor;
       cur[1] += (mouseTarget[1] - cur[1]) * factor;
     } else {
       lastTime = t;
     }
-    try { renderer.render({ scene: mesh }); } catch (e) { }
+
+    try {
+      renderer.render({ scene: mesh });
+    } catch (e) {
+      // Ignore rendering errors
+    }
   };
 
   rafId = requestAnimationFrame(loop);
@@ -566,6 +634,12 @@ async function initFerrofluid(container, options = {}) {
       destroyed = true;
       if (rafId) cancelAnimationFrame(rafId);
       if (mouseInteraction) canvas.removeEventListener('pointermove', onPointerMove);
+
+      document.removeEventListener(
+        'visibilitychange',
+        onDocumentVisibilityChange
+      );
+
       ro.disconnect();
       visibilityObserver.disconnect();
       if (canvas.parentElement === container) container.removeChild(canvas);
@@ -582,24 +656,71 @@ const prevBtn = document.getElementById('prevProject');
 const nextBtn = document.getElementById('nextProject');
 
 if (heroFerrofluid) {
-  const preferMotion = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReducedMotion =
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  if (preferMotion) {
+  const isMobile =
+    window.matchMedia('(max-width: 700px)').matches;
+
+  const isTablet =
+    window.matchMedia('(max-width: 1024px)').matches;
+
+  if (!prefersReducedMotion) {
+    const quality = isMobile
+      ? {
+        dpr: 1.25,
+        maxFps: 30,
+        turbulence: 0.55,
+        fluidity: 0.12,
+        shimmer: 0.7,
+        glow: 1.0,
+        mouseInteraction: false,
+        opacity: 0.4
+      }
+      : isTablet
+        ? {
+          dpr: 1.5,
+          maxFps: 30,
+          turbulence: 0.7,
+          fluidity: 0.14,
+          shimmer: 1.0,
+          glow: 1.25,
+          mouseInteraction: true,
+          opacity: 0.5
+        }
+        : {
+          dpr: 2,
+          maxFps: 30,
+          turbulence: 0.8,
+          fluidity: 0.15,
+          shimmer: 1.2,
+          glow: 1.5,
+          mouseInteraction: true,
+          opacity: 0.6
+        };
+
     initFerrofluid(heroFerrofluid, {
       colors: ['#c5dc6d', '#a2b499', '#8a9189'],
+
       speed: 0.3,
       scale: 1.8,
-      turbulence: 0.8,
-      fluidity: 0.15,
+
+      turbulence: quality.turbulence,
+      fluidity: quality.fluidity,
       rimWidth: 0.25,
       sharpness: 3,
-      shimmer: 1.2,
-      glow: 1.5,
+      shimmer: quality.shimmer,
+      glow: quality.glow,
+
       flowDirection: 'down',
-      opacity: 0.6,
-      mouseInteraction: true,
+      opacity: quality.opacity,
+
+      mouseInteraction: quality.mouseInteraction,
       mouseStrength: 0.8,
       mouseRadius: 0.3,
+
+      dpr: quality.dpr,
+      maxFps: quality.maxFps
     });
   }
 }
