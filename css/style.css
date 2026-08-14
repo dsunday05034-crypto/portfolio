@@ -532,6 +532,9 @@ button,
   font-size: clamp(0.8rem, 1.8vw, 1rem);
   color: var(--text-3);
   margin-top: var(--space-4);
+  min-height: 1.4em;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .hero-title-static {
