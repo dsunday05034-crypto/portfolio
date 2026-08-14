@@ -542,11 +542,15 @@ async function initFerrofluid(container, options = {}) {
   // Optimized: Pause rendering loop when hero section is scrolled out of view
   const visibilityObserver = new IntersectionObserver(([entry]) => {
     isVisible = entry.isIntersecting;
+
     if (isVisible && !rafId && !destroyed) {
       lastTime = performance.now();
       rafId = requestAnimationFrame(loop);
     }
-  }, { threshold: 0 });
+  }, {
+    threshold: 0,
+    rootMargin: '200px 0px 200px 0px'
+  });
 
   visibilityObserver.observe(container);
 
