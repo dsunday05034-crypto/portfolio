@@ -12,27 +12,27 @@ const footerYear = document.getElementById("footerYear");
 const savedTheme = localStorage.getItem("ds-theme") || "dark";
 html.setAttribute("data-theme", savedTheme);
 
-function setAppHeight() {
-  html.style.setProperty("--app-height", `${window.innerHeight}px`);
-}
+// function setAppHeight() {
+//   html.style.setProperty("--app-height", `${window.innerHeight}px`);
+// }
 
-setAppHeight();
-window.addEventListener("orientationchange", () => {
-  setTimeout(setAppHeight, 150);
-});
+// setAppHeight();
+// window.addEventListener("orientationchange", () => {
+//   setTimeout(setAppHeight, 150);
+// });
 
-let appHeightWidth = window.innerWidth;
-window.addEventListener("resize", () => {
-  if (window.innerWidth !== appHeightWidth) {
-    appHeightWidth = window.innerWidth;
-    setAppHeight();
-  }
-}, { passive: true });
+// let appHeightWidth = window.innerWidth;
+// window.addEventListener("resize", () => {
+//   if (window.innerWidth !== appHeightWidth) {
+//     appHeightWidth = window.innerWidth;
+//     setAppHeight();
+//   }
+// }, { passive: true });
 
 document.body.classList.add("is-loading");
 
 window.addEventListener("load", () => {
-  setAppHeight();
+  // setAppHeight();
   setTimeout(() => {
     if (loader) loader.classList.add("hidden");
     document.body.classList.remove("is-loading");

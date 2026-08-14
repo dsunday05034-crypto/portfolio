@@ -399,7 +399,7 @@ button,
 }
 
 .hero {
-  min-height: var(--app-height, 100dvh);
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -423,8 +423,8 @@ button,
   content: '';
   position: absolute;
   inset: 0;
-  /* background-image:
-    radial-gradient(circle at 1px 1px, rgba(var(--accent-rgb), 0.04) 1px, transparent 0); */
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(var(--accent-rgb), 0.04) 1px, transparent 0);
   background-size: 32px 32px;
   pointer-events: none;
   z-index: 0;
@@ -468,8 +468,8 @@ button,
 }
 
 .hero-portrait .portrait-frame {
-  width: clamp(220px, 28vw, 320px);
-  aspect-ratio: 1;
+  width: clamp(180px, 22vw, 300px);
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   box-shadow:
     0 0 0 1px rgba(var(--accent-rgb), 0.12),
