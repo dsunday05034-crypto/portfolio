@@ -1726,3 +1726,9 @@ button,
     padding: var(--space-6) var(--space-4);
   }
 }
+
+.hero-ferrofluid {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
