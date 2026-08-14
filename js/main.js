@@ -10,7 +10,6 @@ const typedEl = document.getElementById("heroTyped");
 const footerYear = document.getElementById("footerYear");
 
 window.addEventListener("load", () => {
-  setAppHeight();
   setTimeout(() => {
     if (loader) loader.classList.add("hidden");
     document.body.classList.remove("is-loading");
