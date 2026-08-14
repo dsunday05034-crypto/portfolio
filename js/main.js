@@ -528,16 +528,32 @@ async function initFerrofluid(container, options = {}) {
   geometry = new Triangle(gl);
   mesh = new Mesh(gl, { geometry, program });
 
+  let resizeTimer = null;
+
   const resize = () => {
     if (!container || destroyed) return;
-    const rect = container.getBoundingClientRect();
-    renderer.setSize(rect.width, rect.height);
-    uniforms.iResolution.value = [gl.drawingBufferWidth, gl.drawingBufferHeight, 1];
+
+    clearTimeout(resizeTimer);
+
+    resizeTimer = setTimeout(() => {
+      if (!container || destroyed) return;
+
+      const rect = container.getBoundingClientRect();
+
+      renderer.setSize(rect.width, rect.height);
+
+      uniforms.iResolution.value = [
+        gl.drawingBufferWidth,
+        gl.drawingBufferHeight,
+        1
+      ];
+    }, 100);
   };
 
   resize();
-  // const ro = new ResizeObserver(resize);
-  // ro.observe(container);
+
+  const ro = new ResizeObserver(resize);
+  ro.observe(container);
 
   // Optimized: Pause rendering loop when hero section is scrolled out of view
   const visibilityObserver = new IntersectionObserver(([entry]) => {
