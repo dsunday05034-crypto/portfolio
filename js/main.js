@@ -7,6 +7,7 @@ const navLinks = document.getElementById("navLinks");
 const navLinkEls = navLinks ? navLinks.querySelectorAll(".nav-link") : [];
 const backToTop = document.getElementById("backToTop");
 const typedEl = document.getElementById("heroTyped");
+const typedLiveEl = document.getElementById("heroTypedLive");
 const footerYear = document.getElementById("footerYear");
 
 const savedTheme = localStorage.getItem("ds-theme") || "dark";
@@ -99,7 +100,6 @@ if (themeToggle) {
 }
 
 const phrases = ["Economics Graduate", "Software Developer", "Backend Engineer", "Problem Solver"];
-const typedLiveEl = document.getElementById("heroTypedLive");
 let phraseIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -212,7 +212,7 @@ function initCardSwap(container, options = {}) {
     verticalDistance = 40
   } = options;
 
-  if (!cards.length) return { destroy() {} };
+  if (!cards.length) return { next() { }, prev() { }, destroy() { } };
 
   const total = cards.length;
   let order = Array.from({ length: total }, (_, i) => i);
@@ -324,6 +324,14 @@ function initCardSwap(container, options = {}) {
   }
 
   return {
+    next() {
+      if (order.length < 2 || destroyed) return;
+      swapTo(order[1]);
+    },
+    prev() {
+      if (order.length < 2 || destroyed) return;
+      swapTo(order[order.length - 1]);
+    },
     destroy() {
       destroyed = true;
       if (intervalId) clearInterval(intervalId);
@@ -342,10 +350,9 @@ function ferrofluidHexToRGB(hex) {
 
 function ferrofluidPrepColors(input) {
   const base = (input && input.length ? input : ['#4F46E5', '#06B6D4', '#E0F2FE']).slice(0, FERROFLUID_MAX_COLORS);
-  const count = base.length;
   const arr = [];
   for (let i = 0; i < FERROFLUID_MAX_COLORS; i++) arr.push(ferrofluidHexToRGB(base[Math.min(i, base.length - 1)]));
-  return { arr, count };
+  return { arr, count: base.length };
 }
 
 function ferrofluidFlowVec(d) {
@@ -447,7 +454,7 @@ async function initFerrofluid(container, options = {}) {
   try {
     ({ Renderer, Program, Mesh, Triangle } = await import('https://cdn.jsdelivr.net/npm/ogl@1.0.11/src/index.js'));
   } catch (e) {
-    return { destroy() {} };
+    return { destroy() { } };
   }
 
   let renderer = null, program = null, mesh = null, geometry = null;
@@ -528,7 +535,7 @@ async function initFerrofluid(container, options = {}) {
     } else {
       lastTime = t;
     }
-    try { renderer.render({ scene: mesh }); } catch (e) {}
+    try { renderer.render({ scene: mesh }); } catch (e) { }
   };
   rafId = requestAnimationFrame(loop);
 
@@ -539,14 +546,12 @@ async function initFerrofluid(container, options = {}) {
       if (mouseInteraction) canvas.removeEventListener('pointermove', onPointerMove);
       ro.disconnect();
       if (canvas.parentElement === container) container.removeChild(canvas);
-      try { gl.getExtension('WEBGL_lose_context')?.loseContext(); } catch (e) {}
+      try { gl.getExtension('WEBGL_lose_context')?.loseContext(); } catch (e) { }
     }
   };
 }
 
-/* ==========================================================================
-   5. INITIALIZES FERROFLUID AND CARDSWAP
-   ========================================================================== */
+/* INITIALIZES FERROFLUID AND CARDSWAP */
 
 const heroFerrofluid = document.getElementById('heroFerrofluid');
 const cardSwapEl = document.getElementById('cardSwap');
@@ -614,7 +619,7 @@ if (cardSwapEl) {
 
   const isMobileStack = window.matchMedia('(max-width: 768px)').matches;
 
-  initCardSwap(cardSwapEl, {
+  const swapInstance = initCardSwap(cardSwapEl, {
     cards: projectCards,
     delay: 5000,
     pauseOnHover: true,
@@ -623,17 +628,7 @@ if (cardSwapEl) {
   });
 
   if (prevBtn && nextBtn) {
-    let currentIndex = 0;
-    prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + projectCards.length) % projectCards.length;
-      const dots = cardSwapEl.parentElement?.querySelectorAll('.card-swap-dot');
-      dots?.[currentIndex]?.click();
-    });
-    nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % projectCards.length;
-      const dots = cardSwapEl.parentElement?.querySelectorAll('.card-swap-dot');
-      dots?.[currentIndex]?.click();
-    });
+    prevBtn.addEventListener('click', () => swapInstance.prev());
+    nextBtn.addEventListener('click', () => swapInstance.next());
   }
 }
-
