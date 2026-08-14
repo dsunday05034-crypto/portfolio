@@ -533,27 +533,21 @@ async function initFerrofluid(container, options = {}) {
   const resize = () => {
     if (!container || destroyed) return;
 
-    clearTimeout(resizeTimer);
+    const rect = container.getBoundingClientRect();
 
-    resizeTimer = setTimeout(() => {
-      if (!container || destroyed) return;
+    renderer.setSize(rect.width, rect.height);
 
-      const rect = container.getBoundingClientRect();
-
-      renderer.setSize(rect.width, rect.height);
-
-      uniforms.iResolution.value = [
-        gl.drawingBufferWidth,
-        gl.drawingBufferHeight,
-        1
-      ];
-    }, 100);
+    uniforms.iResolution.value = [
+      gl.drawingBufferWidth,
+      gl.drawingBufferHeight,
+      1
+    ];
   };
 
   resize();
 
-  const ro = new ResizeObserver(resize);
-  ro.observe(container);
+  window.addEventListener('resize', resize);
+  window.addEventListener('orientationchange', resize);
 
   // Optimized: Pause rendering loop when hero section is scrolled out of view
   const visibilityObserver = new IntersectionObserver(([entry]) => {
@@ -648,18 +642,25 @@ async function initFerrofluid(container, options = {}) {
   return {
     destroy() {
       destroyed = true;
+
       if (rafId) cancelAnimationFrame(rafId);
-      if (mouseInteraction) canvas.removeEventListener('pointermove', onPointerMove);
 
-      document.removeEventListener(
-        'visibilitychange',
-        onDocumentVisibilityChange
-      );
+      if (mouseInteraction) {
+        canvas.removeEventListener('pointermove', onPointerMove);
+      }
 
-      ro.disconnect();
+      window.removeEventListener('resize', resize);
+      window.removeEventListener('orientationchange', resize);
+
       visibilityObserver.disconnect();
-      if (canvas.parentElement === container) container.removeChild(canvas);
-      try { gl.getExtension('WEBGL_lose_context')?.loseContext(); } catch (e) { }
+
+      if (canvas.parentElement === container) {
+        container.removeChild(canvas);
+      }
+
+      try {
+        gl.getExtension('WEBGL_lose_context')?.loseContext();
+      } catch (e) { }
     }
   };
 }
