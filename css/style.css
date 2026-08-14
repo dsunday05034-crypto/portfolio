@@ -1481,7 +1481,7 @@ button,
   }
 
   .hero {
-    min-height: 100dvh;
+    min-height: 100svh;
     padding-top: 96px;
     padding-bottom: var(--space-12);
   }
