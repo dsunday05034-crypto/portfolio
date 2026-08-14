@@ -550,15 +550,7 @@ async function initFerrofluid(container, options = {}) {
   window.addEventListener('orientationchange', resize);
 
   // Optimized: Pause rendering loop when hero section is scrolled out of view
-  const visibilityObserver = new IntersectionObserver(([entry]) => {
-    isVisible = entry.isIntersecting;
-    if (isVisible && !rafId && !destroyed) {
-      lastTime = performance.now();
-      rafId = requestAnimationFrame(loop);
-    }
-  }, { threshold: 0 });
-
-  visibilityObserver.observe(container);
+  const visibilityObserver = null;
 
   const onDocumentVisibilityChange = () => {
     if (document.hidden) {
@@ -597,7 +589,7 @@ async function initFerrofluid(container, options = {}) {
   const loop = t => {
     if (destroyed) return;
 
-    if (!isVisible || document.hidden) {
+    if (document.hidden) {
       rafId = null;
       return;
     }
@@ -652,7 +644,9 @@ async function initFerrofluid(container, options = {}) {
       window.removeEventListener('resize', resize);
       window.removeEventListener('orientationchange', resize);
 
-      visibilityObserver.disconnect();
+      if (visibilityObserver) {
+        visibilityObserver.disconnect();
+      }
 
       if (canvas.parentElement === container) {
         container.removeChild(canvas);

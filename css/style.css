@@ -466,14 +466,6 @@ button,
   background-color: var(--bg);
 }
 
-@media (min-height: 900px) {
-  .hero {
-    min-height: auto;
-    padding-top: 120px;
-    padding-bottom: var(--space-16);
-  }
-}
-
 .hero::before {
   content: '';
   position: absolute;
