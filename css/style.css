@@ -1204,11 +1204,11 @@ button,
 }
 
 .hero-ferrofluid {
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   opacity: 0.35;
   pointer-events: none;
   z-index: 0;
@@ -1725,10 +1725,4 @@ button,
   .nav-links {
     padding: var(--space-6) var(--space-4);
   }
-}
-
-.hero-ferrofluid {
-  transform: translateZ(0);
-  will-change: transform;
-  backface-visibility: hidden;
 }
