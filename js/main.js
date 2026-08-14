@@ -24,7 +24,10 @@ window.addEventListener("load", () => {
 });
 
 let scrollFrameQueued = false;
+
 window.addEventListener("scroll", () => {
+  isScrolling = true;
+
   if (!scrollFrameQueued) {
     window.requestAnimationFrame(() => {
       if (navHeader) navHeader.classList.toggle("scrolled", window.scrollY > 30);
@@ -34,6 +37,16 @@ window.addEventListener("scroll", () => {
     });
     scrollFrameQueued = true;
   }
+}, { passive: true });
+
+let scrollStopTimer = null;
+
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollStopTimer);
+
+  scrollStopTimer = setTimeout(() => {
+    isScrolling = false;
+  }, 120);
 }, { passive: true });
 
 if (hamburger && navLinks) {
@@ -604,6 +617,10 @@ async function initFerrofluid(container, options = {}) {
 
     rafId = requestAnimationFrame(loop);
 
+    if (isScrolling) {
+      return;
+    }
+
     if (t - lastRenderTime < frameInterval) {
       return;
     }
@@ -666,6 +683,8 @@ async function initFerrofluid(container, options = {}) {
 }
 
 /* INITIALIZES FERROFLUID AND CARDSWAP */
+
+let isScrolling = false;
 
 const heroFerrofluid = document.getElementById('heroFerrofluid');
 const cardSwapEl = document.getElementById('cardSwap');
