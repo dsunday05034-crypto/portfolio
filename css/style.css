@@ -91,6 +91,9 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
+  box-sizing: border-box;
 }
 
 body {
@@ -399,13 +402,13 @@ button,
 }
 
 .hero {
-  min-height: 100dvh;
+  min-height: max(100vh, 600px);
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
   position: relative;
-  overflow: clip;
+  overflow: hidden;
   padding-top: 88px;
   padding-bottom: var(--space-12);
   background-color: var(--bg);
@@ -428,6 +431,8 @@ button,
   background-size: 32px 32px;
   pointer-events: none;
   z-index: 0;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .hero-inner {
