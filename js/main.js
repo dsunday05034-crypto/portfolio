@@ -536,21 +536,17 @@ async function initFerrofluid(container, options = {}) {
   };
 
   resize();
-  const ro = new ResizeObserver(resize);
-  ro.observe(container);
+  // const ro = new ResizeObserver(resize);
+  // ro.observe(container);
 
   // Optimized: Pause rendering loop when hero section is scrolled out of view
   const visibilityObserver = new IntersectionObserver(([entry]) => {
     isVisible = entry.isIntersecting;
-
     if (isVisible && !rafId && !destroyed) {
       lastTime = performance.now();
       rafId = requestAnimationFrame(loop);
     }
-  }, {
-    threshold: 0,
-    rootMargin: '200px 0px 200px 0px'
-  });
+  }, { threshold: 0 });
 
   visibilityObserver.observe(container);
 
