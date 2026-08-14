@@ -474,8 +474,8 @@ button,
   content: '';
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(circle at 1px 1px, rgba(var(--accent-rgb), 0.04) 1px, transparent 0);
+  /* background-image:
+    radial-gradient(circle at 1px 1px, rgba(var(--accent-rgb), 0.04) 1px, transparent 0); */
   background-size: 32px 32px;
   pointer-events: none;
   z-index: 0;

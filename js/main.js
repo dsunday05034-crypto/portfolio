@@ -458,11 +458,13 @@ async function initFerrofluid(container, options = {}) {
   }
 
   let renderer = null, program = null, mesh = null, geometry = null;
-  let rafId = null, destroyed = false;
+  let rafId = null, destroyed = false, isVisible = true;
   const mouseTarget = [0, 0];
   let lastTime = 0;
 
-  const rendererDpr = dpr ?? (typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1);
+  // Optimized: Cap DPR at 2 max to protect mobile and high-density screens from GPU spikes
+  const rawDpr = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1;
+  const rendererDpr = dpr ?? Math.min(rawDpr, 2);
 
   renderer = new Renderer({ dpr: rendererDpr, alpha: true, antialias: true });
   const gl = renderer.gl;
@@ -505,6 +507,17 @@ async function initFerrofluid(container, options = {}) {
   const ro = new ResizeObserver(resize);
   ro.observe(container);
 
+  // Optimized: Pause rendering loop when hero section is scrolled out of view
+  const visibilityObserver = new IntersectionObserver(([entry]) => {
+    isVisible = entry.isIntersecting;
+    if (isVisible && !rafId && !destroyed) {
+      lastTime = performance.now();
+      rafId = requestAnimationFrame(loop);
+    }
+  }, { threshold: 0 });
+
+  visibilityObserver.observe(container);
+
   const onPointerMove = e => {
     const rect = canvas.getBoundingClientRect();
     const sc = renderer.dpr || 1;
@@ -520,8 +533,16 @@ async function initFerrofluid(container, options = {}) {
 
   const loop = t => {
     if (destroyed) return;
+
+    // Stop requesting new frames if off-screen
+    if (!isVisible) {
+      rafId = null;
+      return;
+    }
+
     rafId = requestAnimationFrame(loop);
     uniforms.iTime.value = t * 0.001;
+
     if (mouseDampening > 0) {
       if (!lastTime) lastTime = t;
       const dt = (t - lastTime) / 1000;
@@ -537,6 +558,7 @@ async function initFerrofluid(container, options = {}) {
     }
     try { renderer.render({ scene: mesh }); } catch (e) { }
   };
+
   rafId = requestAnimationFrame(loop);
 
   return {
@@ -545,6 +567,7 @@ async function initFerrofluid(container, options = {}) {
       if (rafId) cancelAnimationFrame(rafId);
       if (mouseInteraction) canvas.removeEventListener('pointermove', onPointerMove);
       ro.disconnect();
+      visibilityObserver.disconnect();
       if (canvas.parentElement === container) container.removeChild(canvas);
       try { gl.getExtension('WEBGL_lose_context')?.loseContext(); } catch (e) { }
     }
@@ -560,9 +583,8 @@ const nextBtn = document.getElementById('nextProject');
 
 if (heroFerrofluid) {
   const preferMotion = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const isDesktopHero = window.matchMedia('(min-width: 769px)').matches;
 
-  if (preferMotion && isDesktopHero) {
+  if (preferMotion) {
     initFerrofluid(heroFerrofluid, {
       colors: ['#c5dc6d', '#a2b499', '#8a9189'],
       speed: 0.3,
