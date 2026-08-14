@@ -402,7 +402,7 @@ button,
 }
 
 .hero {
-  min-height: max(100vh, 600px);
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -473,7 +473,7 @@ button,
 }
 
 .hero-portrait .portrait-frame {
-  width: clamp(180px, 22vw, 300px);
+  width: clamp(200px, 25vw, 360px);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   box-shadow:
