@@ -767,7 +767,7 @@ if (cardSwapEl) {
       title: 'Forex AI Trader',
       desc: 'A forex market analysis project combining economic concepts, market data, and AI-assisted insights. Studying price movements, evaluating trading opportunities, and experimenting with automated decision-making tools.',
       tech: ['Go', 'AI/ML', 'REST APIs', 'Data Analysis'],
-      links: `<span class="status-badge">In Active Development</span>`
+      links: `<span class="status-badge">Private Repo</span>`
     },
   ];
 
