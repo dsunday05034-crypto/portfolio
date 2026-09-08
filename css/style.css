@@ -342,13 +342,23 @@ button,
 
 .loader-initials {
   display: block;
-  font-family: var(--font-display);
-  font-size: 3rem;
-  font-weight: 800;
-  color: var(--accent);
+  width: 72px;
+  height: 72px;
+  margin-inline: auto;
   margin-bottom: var(--space-6);
-  letter-spacing: -0.04em;
   animation: loader-pulse 1.2s ease-in-out infinite;
+}
+
+.logo-mark-brace {
+  stroke: var(--accent);
+}
+
+.logo-mark-letter {
+  fill: var(--text);
+}
+
+.logo-mark-letter-stroke {
+  stroke: var(--text);
 }
 
 @keyframes loader-pulse {
@@ -413,21 +423,19 @@ button,
 }
 
 .nav-logo {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text);
-  transition: color var(--t-base);
+  display: inline-flex;
+  align-items: center;
   flex-shrink: 0;
-  letter-spacing: 0.02em;
+  transition: transform var(--t-base) var(--ease);
 }
 
 .nav-logo:hover {
-  color: var(--accent);
+  transform: scale(1.06);
 }
 
-.logo-bracket {
-  color: var(--accent);
+.nav-logo-mark {
+  width: 30px;
+  height: 30px;
 }
 
 .nav-links {
@@ -1443,16 +1451,17 @@ button,
 }
 
 .footer-logo {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text);
-  transition: color var(--t-base);
-  letter-spacing: 0.02em;
+  display: inline-flex;
+  transition: transform var(--t-base) var(--ease);
 }
 
 .footer-logo:hover {
-  color: var(--accent);
+  transform: scale(1.06);
+}
+
+.footer-logo-mark {
+  width: 34px;
+  height: 34px;
 }
 
 .footer-tagline {
