@@ -41,8 +41,10 @@ Building an expense-tracking application focused on clean data modeling and a si
 *In Progress*
 
 ### Personal Developer Portfolio
-Engineered a dependency-free portfolio site by vendoring all assets locally. Ported a pointer-reactive WebGL background and card-glow effect from a React component library into vanilla JavaScript, keeping the site framework-free, and improved load performance by compressing images and adding explicit dimensions.
-`JavaScript` `CSS` `HTML` `WebGL`
+Built a dependency-free portfolio site with all assets — fonts and icons — vendored 
+and self-hosted locally, no runtime CDN calls. Wrote a custom SVG logo mark and 
+a project carousel component in vanilla JavaScript, keeping the site framework-free.
+`JavaScript` `CSS` `HTML`
 [GitHub](https://github.com/dsunday05034-crypto) | [Live Demo](https://danielsunday.name.ng)
 
 ### ASCII Art Suite & Web Engine
