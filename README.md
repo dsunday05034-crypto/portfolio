@@ -1,79 +1,124 @@
-# Daniel Eromosele Sunday
+# Daniel Sunday
 
-**Full-Stack Software Developer**
-Abuja, Nigeria | [danielsunday.name.ng](https://danielsunday.name.ng) | [dsunday05034@gmail.com](mailto:dsunday05034@gmail.com)
-[GitHub](https://github.com/dsunday05034-crypto) | [LinkedIn](https://www.linkedin.com/in/daniel-e-sunday)
+## Software Developer | Python | Go | JavaScript
+
+I'm a software developer and Economics graduate focused on building practical software solutions across web development, backend systems, APIs, databases, automation, and AI-integrated applications.
+
+I enjoy breaking down complex problems, understanding how systems work, and turning ideas into working software.
+
+### Tech Stack
+
+**Languages**
+- Python
+- Go
+- JavaScript
+- HTML
+- CSS
+
+**Frameworks & Technologies**
+- React
+- Next.js
+- FastAPI
+- REST APIs
+- PostgreSQL
+- Supabase
+
+**Tools**
+- Git
+- GitHub
+- Linux
+- Docker
+- Vercel
+
+**Areas**
+- Backend Development
+- Web Development
+- API Integration
+- Database Development
+- AI Applications
+- Automation
+- Data Analysis
+- Software Testing
 
 ---
 
-// Economics Graduate | Full-Stack Software Developer | Python | Go | JavaScript
+## Featured Projects
 
-Full-stack Software Developer who builds across the frontend and backend — from a framework-free JavaScript/WebGL portfolio site to Go HTTP servers and a Python trading system that integrates the Gemini AI API for signal analysis. Applies a quantitative, systems-first approach from an Economics background to breaking problems down and reasoning through trade-offs. Comfortable in Go, Python, and JavaScript; currently deepening Python for AI-integrated applications.
+### DuePing
 
----
+A payment and commitment tracking platform for individuals, freelancers, and businesses.
 
-## Skills
+Users can create commitments, set amounts and due dates, share payment links, track payment status, and receive automated reminders before and after payments become due.
 
-**Languages:** Python, Go, JavaScript, HTML, CSS
+**Tech:** Next.js, React, Supabase, Resend
 
-**AI Integration:** Google Gemini API (signal/sentiment analysis), prompt-driven decision logic, confidence-weighted signal blending
+**Live:** https://www.dueping.site
 
-**Backend & Systems:** REST API integration, HTTP servers, file I/O & stream processing, table-driven & unit testing
-
-**Frontend:** Responsive, framework-free UI development, WebGL basics, Next.js
-
-**Tools & Environment:** Git, GitHub, Linux (WSL), VS Code, Vercel
-
-**Currently Learning:** Supabase (Postgres-backed BaaS)
+**Repository:** https://github.com/dsunday05034-crypto/dueping
 
 ---
 
-## Projects
+### NGX Analyst
 
-### AI-Assisted Forex Trading Bot
-A trading system on MetaTrader 5 combining EMA/RSI/MACD/ATR technical signals with a Gemini AI news-sentiment overlay into a weighted confidence score; runs live across 4 instruments on a demo account with a tiered trailing-stop risk manager. Validated exit parameters with bar-by-bar backtest simulation and built a 28-test suite across 7 files covering position management and risk gates.
-`Python` `MetaTrader5 API` `Gemini AI` `REST APIs`
-*(Private Repo)*
+An AI-powered investment intelligence and portfolio management platform focused on Nigerian equities.
 
-### Personal Finance Tracker
-Building an expense-tracking application focused on clean data modeling and a simple interface for visualizing monthly spending trends.
-`Next.js` `Supabase`
-*In Progress*
+The application combines market data, technical and fundamental analysis, portfolio tracking, automated alerts, and AI-assisted market insights to help users evaluate investment opportunities.
 
-### Personal Developer Portfolio
-Built a dependency-free portfolio site with all assets — fonts and icons — vendored 
-and self-hosted locally, no runtime CDN calls. Wrote a custom SVG logo mark and 
-a project carousel component in vanilla JavaScript, keeping the site framework-free.
-`JavaScript` `CSS` `HTML`
-[GitHub](https://github.com/dsunday05034-crypto) | [Live Demo](https://danielsunday.name.ng)
+**Tech:** Python, FastAPI, Supabase, Gemini AI, PostgreSQL, pandas, NumPy
 
-### ASCII Art Suite & Web Engine
-Built a suite of Go CLI tools around a custom ASCII-art rendering engine (color rendering, banner styles, alignment modes), then extended it into a web app using native Go HTTP handlers and the embed/template packages, backed by table-driven unit tests.
-`Go` `Go Embed` `HTTP Server` `File I/O`
-[GitHub](https://github.com/dsunday05034-crypto/ASCII-Art-Web-Generator.git) | [Live Demo](https://ascii-art-web-generator.vercel.app/)
+**Live:** https://analyst.danielsunday.name.ng
 
-### Go Stream-Based Text Processor
-Built a stream-processing CLI for typography correction, macro/token parsing, case transformation, and binary/hexadecimal conversion, using buffered readers/writers for line-by-line processing.
-`Go` `Regex` `Streams` `CLI`
-[GitHub](https://github.com/dsunday05034-crypto/go_text_processor)
+**Repository:** https://github.com/dsunday05034-crypto/ngx-analyst
+
+---
+
+### AI-Assisted Forex Trader
+
+A Python-based forex trading system combining technical indicators, market data, AI-assisted news sentiment, strategy evaluation, backtesting, and risk management.
+
+The system explores automated trading workflows while using structured testing and historical data to evaluate trading strategies.
+
+**Tech:** Python, MetaTrader 5, Gemini AI, REST APIs, Backtesting
+
+**Repository:** https://github.com/dsunday05034-crypto/forex-ai-trader
+
+---
+
+### Developer Portfolio
+
+My personal developer portfolio showcasing my projects, technical skills, experience, and software development work.
+
+**Tech:** HTML, CSS, JavaScript, Vercel
+
+**Live:** https://danielsunday.name.ng
+
+**Repository:** https://github.com/dsunday05034-crypto/portfolio
 
 ---
 
 ## Experience
 
-**Software Developer Fellow** | Learn2Earn, Abuja, Nigeria | Feb 2026 — Present
-Selected into a project-driven software engineering fellowship founded by Iyinoluwa Aboyeji (Andela, Flutterwave); build backend tools in Go, JavaScript, and Python alongside peers, following modern testing and deployment workflows. Participate in regular code reviews and apply feedback to ship maintainable code.
+### Learn2Earn Fellowship
+**Software Developer | 2026 – Present**
 
-**Real Estate Agent** | Dancel Jovic Integrated International Ltd, Abuja, Nigeria | 2023 — 2024
-Advised clients on property acquisitions and negotiated lease/purchase terms while maintaining accurate records.
+Developing software solutions through structured programming, debugging, API integration, database development, and AI-assisted development workflows.
+
+Working with Python, Go, JavaScript, Linux, Git, and modern web technologies while strengthening software engineering and problem-solving skills.
 
 ---
 
 ## Education
 
-**B.Sc. Economics (Second Class Honours, Upper Division)** | Bingham University, Nasarawa, Nigeria | Graduated October 2023
-Completed training in mathematical modeling, resource distribution logic, quantitative reasoning, and statistical data frameworks.
+### Bingham University
+**B.Sc. Economics | Second Class Upper**
+
+2019 – 2023
 
 ---
 
-**5+ production projects built**
+## Connect
+
+- Portfolio: https://danielsunday.name.ng
+- GitHub: https://github.com/dsunday05034-crypto
+- LinkedIn: https://www.linkedin.com/in/daniel-e-sunday
+- Email: dsunday05034@gmail.com
