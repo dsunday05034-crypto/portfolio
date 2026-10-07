@@ -99,7 +99,7 @@ if (themeToggle) {
   });
 }
 
-const phrases = ["Economics Graduate", "Software Developer", "Backend Engineer", "Problem Solver"];
+const phrases = ["Economics Graduate", "Software Developer", "Web Developer", "Problem Solver"];
 let phraseIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
