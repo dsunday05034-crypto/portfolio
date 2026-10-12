@@ -349,7 +349,7 @@ if (cardSwapEl) {
     number: '01',
     title: 'DuePing',
     desc: 'A payment and commitment tracking application that helps individuals, freelancers, and businesses manage money owed to them or payments they need to make. Users can create commitments, share payment links, and automate reminders before and after due dates until payment is completed.',
-    tech: ['JavaScript', 'REST APIs', 'Supabase', 'Automation'],
+    tech: ['Next.js', 'React', 'Supabase', 'Automation'],
     links: `<a href="https://www.dueping.site" class="btn-link" target="_blank" rel="noopener noreferrer">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12">
         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
@@ -370,7 +370,7 @@ if (cardSwapEl) {
     number: '02',
     title: 'NGX Analyst',
     desc: 'A Nigerian stock portfolio tracking and market analysis application that helps investors monitor their holdings, review portfolio performance, and understand market conditions through AI-assisted insights to support more informed investment decisions.',
-    tech: ['JavaScript', 'AI', 'APIs', 'Data Analysis'],
+    tech: ['Python', 'FastAPI', 'AI', 'PostgreSQL'],
     links: `<a href="https://analyst.danielsunday.name.ng" class="btn-link" target="_blank" rel="noopener noreferrer">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12">
         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
