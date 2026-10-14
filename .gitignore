@@ -13,3 +13,5 @@ Thumbs.db
 .agents/
 skills-lock.json
 
+# Brag video outputs
+brag-output/
